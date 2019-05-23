@@ -38,4 +38,8 @@
 - CSS (Front-end) [https://www.youtube.com/watch?v=1vXYNkQry8g&list=PLkY6Xj8Sg8-uuoPIFCexEihOmqzdtk9BW](https://www.youtube.com/watch?v=1vXYNkQry8g&list=PLkY6Xj8Sg8-uuoPIFCexEihOmqzdtk9BW)
 -  HTML :[https://www.youtube.com/watch?v=_7uda2DyR3E&list=PLl4nkmb3a8w135_M4YRPzYD9_6tERz3ce](https://www.youtube.com/watch?v=_7uda2DyR3E&list=PLl4nkmb3a8w135_M4YRPzYD9_6tERz3ce)
 - Documents : [https://www.w3schools.com/html/default.asp](https://www.w3schools.com/html/default.asp)
-
+**Phân công **
+- Quang : Back-end, review code .
+- ...
+- ...
+- ...
