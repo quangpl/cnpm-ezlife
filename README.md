@@ -18,8 +18,7 @@
 **Mục tiêu đề tài :**
 ...
 **Cơ sở lý thuyết  :**
-...
-
+Window Form.
 
 
 
