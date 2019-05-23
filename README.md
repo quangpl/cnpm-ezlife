@@ -1,5 +1,6 @@
 
-**## Đồ án Quản lý ABC**
+
+**## Đồ án Quản lý nhà sách**
 
 
 | Môn học |Ngôn ngữ  |Công nghệ | Nền tảng
