@@ -1,4 +1,4 @@
-﻿
+
   
 **## Đồ án Quản lý ABC**  
   
@@ -41,6 +41,6 @@
 
 **Phân công**
 - Quang : Back-end, review code .
-- Hưng  : Function
+- ...
 - ...
 - ...
