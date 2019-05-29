@@ -1,21 +1,16 @@
 const mongoose = require('mongoose');
-const KhachHangSchema = require('../schemas/KhachHang');
-let KhachHang = mongoose.model("KhachHang", KhachHangSchema);
+const ExampleSchema = require('../schemas/Example');
+let Example = mongoose.model("Example", ExampleSchema);
 // readme: https://mongoosejs.com/docs/api.html#Model
 
-KhachHang.addMember = async ({MaKhachHang, TenKhachHang, SoDienThoai, DiaChi, Email, SoTienNo}) => {
+Chat.addMember = async (MaHoaDon,xyz) => {
 
-    let KhachHang = new KhachHang({
-        MaKhachHang: MaKhachHang,
-        TenKhachHang: TenKhachHang,
-        SoDienThoai: SoDienThoai,
-        DiaChi: DiaChi,
-        Email: Email,
-        SoTienNo: SoTienNo
+    let newEx = new Example({
+        MaHoaDon: MaHoaDon
     });
 
-    await KhachHang.save();
-    return KhachHang;
+    await newEx.save();
+    return newEx;
 };
 
-module.exports = KhachHang;
+module.exports = Example;
