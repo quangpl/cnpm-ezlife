@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const ConditionSchema = new Schema({
+const SettingSchema = new Schema({
     description: {
         type: String,
         required: true
     },
     value: {
-        type: String,
+        type: Number,
         required: true
     },
 }, {
@@ -16,4 +16,4 @@ const ConditionSchema = new Schema({
     versionKey: false
 });
 
-module.exports = ConditionSchema;
+module.exports = SettingSchema;

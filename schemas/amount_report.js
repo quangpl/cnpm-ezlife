@@ -7,11 +7,11 @@ const AmountReportSchema = new Schema({
         type: String,
         required: true
     },
+    // Thời gian báo cáo
     time: {
         type: Date,
         required: true
     },
-    // Báo cáo tháng nào, năm nào.
     firstAmount: {
         type: Number,
         required: true
