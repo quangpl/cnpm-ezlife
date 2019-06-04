@@ -11,7 +11,7 @@ const SalarySchema = new Schema({
         type: Number,
         required: true
     },
-    bonusMoney: {
+    bonus: {
         type: Number,
         required: true
     },
@@ -19,7 +19,7 @@ const SalarySchema = new Schema({
         type: Number,
         required: true
     },
-    insurranceMoney: {
+    insurance: {
         type: Number,
         required: true
     },
