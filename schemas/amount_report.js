@@ -3,10 +3,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const AmountReportSchema = new Schema({
-    id: {
-        type: String,
-        required: true
-    },
     bookId: {
         type: String,
         required: true
@@ -21,10 +17,6 @@ const AmountReportSchema = new Schema({
         required: true
     },
     lastAmount: {
-        type: Number,
-        required: true
-    },
-    incurredAmount: {
         type: Number,
         required: true
     },

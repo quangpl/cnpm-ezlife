@@ -3,10 +3,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const CustomerSchema = new Schema({
-    id: {
-        type: String,
-        required: true
-    },
     name: {
         type: String,
         required: true
@@ -24,7 +20,7 @@ const CustomerSchema = new Schema({
         required: true
     },
     debtMoney: {
-        type: String,
+        type: Number,
         required: true
     },
 }, {

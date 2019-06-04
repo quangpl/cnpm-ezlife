@@ -3,10 +3,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const DebtReportSchema = new Schema({
-    id: {
-        type: String,
-        required: true
-    },
     customerId: {
         type: String,
         required: true
@@ -23,11 +19,7 @@ const DebtReportSchema = new Schema({
     lastDebt: {
         type: Number,
         required: true
-    },
-    incurredDebt: {
-        type: Number,
-        required: true
-    },
+    }
 }, {
     timestamps: true,
     versionKey: false

@@ -3,12 +3,17 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const BookSchema = new Schema({
-    id: {
-        type: String,
-        required: true
-    },
-    typeId: {
-        type: String,
+    type: {
+        type: {
+            id: {
+                type: String,
+                required: true
+            },
+            name: {
+                type: String,
+                required: true
+            }
+        },
         required: true
     },
     name: {
