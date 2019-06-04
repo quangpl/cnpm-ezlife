@@ -2,30 +2,27 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const CustomerSchema = new Schema({
-    name: {
+const DebtReportSchema = new Schema({
+    customerId: {
         type: String,
         required: true
     },
-    phone: {
+    time: {
+        type: Date,
+        required: true
+    },
+    // Báo cáo tháng nào, năm nào.
+    firstDebt: {
         type: Number,
         required: true
     },
-    address: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true
-    },
-    debtMoney: {
+    lastDebt: {
         type: Number,
         required: true
-    },
+    }
 }, {
     timestamps: true,
     versionKey: false
 });
 
-module.exports = CustomerSchema;
+module.exports = DebtReportSchema;

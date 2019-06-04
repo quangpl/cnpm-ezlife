@@ -2,24 +2,21 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const CustomerSchema = new Schema({
-    name: {
+const AmountReportSchema = new Schema({
+    bookId: {
         type: String,
         required: true
     },
-    phone: {
+    time: {
+        type: Date,
+        required: true
+    },
+    // Báo cáo tháng nào, năm nào.
+    firstAmount: {
         type: Number,
         required: true
     },
-    address: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true
-    },
-    debtMoney: {
+    lastAmount: {
         type: Number,
         required: true
     },
@@ -28,4 +25,4 @@ const CustomerSchema = new Schema({
     versionKey: false
 });
 
-module.exports = CustomerSchema;
+module.exports = AmountReportSchema;

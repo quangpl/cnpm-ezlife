@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const ReceiptSchema = new Schema({
-    customerId: {
+const ConditionSchema = new Schema({
+    description: {
         type: String,
         required: true
     },
-    numberOfMoney: {
-        type: Number,
+    value: {
+        type: String,
         required: true
     },
 }, {
@@ -16,4 +16,4 @@ const ReceiptSchema = new Schema({
     versionKey: false
 });
 
-module.exports = ReceiptSchema;
+module.exports = ConditionSchema;
