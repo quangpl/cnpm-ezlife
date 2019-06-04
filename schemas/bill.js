@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 
 const BillSchema = new Schema({
     customerId: {
-        type: String,
+        type: Schema.ObjectId,
         required: true
     },
     employeeId: {
-        type: String,
+        type: Schema.ObjectId,
         required: true
     },
     value: {
@@ -18,7 +18,7 @@ const BillSchema = new Schema({
     books: {
         type: [{
             _id: {
-                type: String,
+                type: Schema.ObjectId,
                 required: true
             },
             unitPrice: {

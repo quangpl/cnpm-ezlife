@@ -4,16 +4,7 @@ const Schema = mongoose.Schema;
 
 const BookSchema = new Schema({
     type: {
-        type: {
-            id: {
-                type: String,
-                required: true
-            },
-            name: {
-                type: String,
-                required: true
-            }
-        },
+        type: String,
         required: true
     },
     name: {

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const AmountReportSchema = new Schema({
     bookId: {
-        type: String,
+        type: Schema.ObjectId,
         required: true
     },
     // Thời gian báo cáo

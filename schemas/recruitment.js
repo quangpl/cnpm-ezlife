@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const RecruitmentSchema = new Schema({
     status: {
-        type: String,
+        type: Boolean,
         required: true
     },
 }, {

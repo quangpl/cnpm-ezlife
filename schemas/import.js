@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const ImportSchema = new Schema({
     bookId: {
-        type: String,
+        type: Schema.ObjectId,
         required: true
     },
     bookTypeId: {

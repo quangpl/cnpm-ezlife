@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const ReceiptSchema = new Schema({
-    customerId: {
-        type: Schema.ObjectId,
+const StaffTypeSchema = new Schema({
+    _id: {
+        type: String,
         required: true
     },
-    numberOfMoney: {
-        type: Number,
+    name: {
+        type: String,
         required: true
     },
 }, {
@@ -16,4 +16,4 @@ const ReceiptSchema = new Schema({
     versionKey: false
 });
 
-module.exports = ReceiptSchema;
+module.exports = StaffTypeSchema;
