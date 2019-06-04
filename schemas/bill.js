@@ -16,20 +16,7 @@ const BillSchema = new Schema({
         required: true
     },
     books: {
-        type: [{
-            _id: {
-                type: Schema.ObjectId,
-                required: true
-            },
-            unitPrice: {
-                type: Number,
-                required: true
-            },
-            amount: {
-                type: Number,
-                require: true
-            }
-        }],
+        type: Array,
         required: true
     },
 }, {
