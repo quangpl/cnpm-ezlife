@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const BookSchema = new Schema({
-    type: {
+    name: {
         type: String,
         required: true
     },
-    name: {
+    typeId: {
         type: String,
         required: true
     },
@@ -19,7 +19,11 @@ const BookSchema = new Schema({
         type: String,
         required: true
     },
-    amount: {
+    numberOf: {
+        type: Number,
+        required: true
+    },
+    unitPrice: {
         type: Number,
         required: true
     },
