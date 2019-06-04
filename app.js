@@ -1,13 +1,13 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
-var app = express();
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
+let mongoose = require('mongoose');
+let indexRouter = require('./routes/index');
+let usersRouter = require('./routes/users');
+const config = require('./config');
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -42,8 +42,28 @@ app.use(function (err, req, res, next) {
  * Module dependencies.
  */
 
-var debug = require('debug')('cnpm-ezlife:server');
-var http = require('http');
+let debug = require('debug')('cnpm-ezlife:server');
+let http = require('http');
+
+
+/**
+ * Run and config MongoDB
+ */
+(async () => {
+
+    await mongoose.connect(config.urlMongoDb, {
+        useNewUrlParser: true,
+        autoIndex: false,
+        useCreateIndex: true,
+        connectTimeoutMS: 30000,
+        socketTimeoutMS: 30000
+    });
+
+    if (mongoose.connection.readyState === 1) {
+        console.log(`Connect to Database successfully `)
+    }
+})();
+
 
 /**
  * Get port from environment and store in Express.
@@ -65,6 +85,7 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+
 
 /**
  * Normalize a port into a number, string, or false.
