@@ -8,9 +8,7 @@ Bill.add = async ({
                       employeeId: employeeId,
                       books: books,
                   }) => {
-    let value;
-     // todo:Get prices of array books
-
+    let value = await Bill.getValue(books);
     let newBill = new Bill({
         customerId: customerId,
         employeeId: employeeId,
@@ -26,17 +24,17 @@ Bill.update = async ({
                          id: id,
                          customerId: customerId,
                          employeeId: employeeId,
-                         value: value,
                          books: books,
                      }) => {
-//todo: check customer is valid (debt <20 000 & redudant of book after sale >=20
+
+    let value = await Bill.getValue(books);
     return await Book.updateOne({
         _id: id
     }, {
         customerId: customerId,
         employeeId: employeeId,
-        value: value,
         books: books,
+        value: value
     }).exec();
 };
 
@@ -46,5 +44,19 @@ Bill.delete = async (id) => {
     }).exec();
 };
 
+Bill.getValue = async (listBook) => {
+    let value = 0;
+    let books = [];
+    listBook.forEach(async (e) => {
+        books.push(await Book.getById(e));
+    });
+
+    for (let i = 0; i < books.length; i++) {
+        let price = books[i].unitPrice * 1.05;//todo: get parameter from setting db
+        value += price;
+    }
+
+    return value;
+};
 
 module.exports = Bill;
