@@ -71,5 +71,13 @@ Book.getPriceToSale = async (id) => {
     return book.unitPrice * 1.05;  //todo : get parameter from setting db
 };
 
+Book.isValid = async ({id, numberOfSale}) => {
+    let book = await Book.findOne({
+        _id: id
+    }).exec();
+    return book.numberOf - numberOfSale >= 20;
+};
+
+
 
 module.exports = Book;
