@@ -11,5 +11,11 @@ Customer.isValid = async (id) => {
     return customer.debtMoney < 20000; //fixme : get parameter from setting db
 };
 
+Customer.getById = async (id) => {
+
+    return await Customer.findOne({
+        _id: id
+    }).exec();
+};
 
 module.exports = Customer;
