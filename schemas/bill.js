@@ -19,6 +19,11 @@ const BillSchema = new Schema({
         type: Array,
         required: true
     },
+    isPaid: {
+        type: Boolean,
+        required: true,
+        default: false
+    }
 }, {
     timestamps: true,
     versionKey: false
