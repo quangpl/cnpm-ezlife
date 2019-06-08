@@ -3,10 +3,10 @@ const BookSchema = require('../schemas/book');
 let Book = mongoose.model("Book", BookSchema);
 
 Book.add = async ({
-                      type: type,
-                      name: name,
-                      author: author,
-                      numberOf: numberOf,
+                      type,
+                      name,
+                      author,
+                      numberOf,
                       unitPrice: unitPrice
                   }) => {
 
@@ -23,11 +23,11 @@ Book.add = async ({
 };
 
 Book.update = async ({
-                         id: id,
-                         type: type,
-                         name: name,
-                         author: author,
-                         numberOf: numberOf,
+                         id,
+                         type,
+                         name,
+                         author,
+                         numberOf,
                          unitPrice: unitPrice
                      }) => {
 
