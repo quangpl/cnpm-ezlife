@@ -4,9 +4,9 @@ let Bill = mongoose.model("Bill", BillSchema);
 let Book = require('./book');
 
 Bill.add = async ({
-                      customerId: customerId,
-                      employeeId: employeeId,
-                      books: books,
+                      customerId,
+                      employeeId,
+                      books
                   }) => {
     let value = await Bill.getValue(books);
     let newBill = new Bill({
@@ -21,10 +21,10 @@ Bill.add = async ({
 };
 
 Bill.update = async ({
-                         id: id,
-                         customerId: customerId,
-                         employeeId: employeeId,
-                         books: books,
+                         id,
+                         customerId,
+                         employeeId,
+                         books
                      }) => {
 
     let value = await Bill.getValue(books);
