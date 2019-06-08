@@ -5,3 +5,5 @@ node_modules/
 .idea/
 node_modules/
 >>>>>>> 71bde0968910d5142075ebf4a8860ac86400d620
+.vscode
+.vs
