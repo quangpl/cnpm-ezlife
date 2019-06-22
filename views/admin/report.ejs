@@ -6,15 +6,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/libs/css/style.css">
-    <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
-    <link rel="stylesheet" href="assets/vendor/charts/chartist-bundle/chartist.css">
-    <link rel="stylesheet" href="assets/vendor/charts/morris-bundle/morris.css">
-    <link rel="stylesheet" href="assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="assets/vendor/charts/c3charts/c3.css">
-    <link rel="stylesheet" href="assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets_admin/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="assets_admin/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets_admin/libs/css/style.css">
+    <link rel="stylesheet" href="assets_admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="assets_admin/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="assets_admin/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" href="assets_admin/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="assets_admin/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="assets_admin/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <title>Quản trị nhà sách | EZLIFE </title>
 </head>
 
@@ -43,7 +43,7 @@
 
                     <li class="nav-item dropdown nav-user">
                         <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false"><img src="assets/images/avatar-1.jpg" alt=""
+                           aria-haspopup="true" aria-expanded="false"><img src="assets_admin/images/avatar-1.jpg" alt=""
                                                                            class="user-avatar-md rounded-circle"></a>
                         <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
                              aria-labelledby="navbarDropdownMenuLink2">
@@ -86,14 +86,14 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="https://google.vn" aria-expanded="false"
+                            <a class="nav-link" href="https://google.vn" aria-expanded="false"
                                aria-controls="submenu-2"><i class="fa fa-fw fa-money-bill-alt"></i>Bill Manager</a>
                             <div id="submenu-2" class="collapse submenu" style="">
 
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                            <a class="nav-link " href="https://google.vn" aria-expanded="false"
                                aria-controls="submenu-2"><i class="fa fa-fw fa-user"></i>Customer Manager</a>
                             <div id="submenu-2" class="collapse submenu" style="">
 
@@ -107,7 +107,7 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="https://google.vn" aria-expanded="false"
+                            <a class="nav-link" href="https://google.vn" aria-expanded="false"
                                aria-controls="submenu-2"><i class="fa fa-fw fa-user-md"></i>Staff Manager</a>
                             <div id="submenu-2" class="collapse submenu" style="">
 
@@ -117,7 +117,7 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                            <a class="nav-link active" href="https://google.vn" aria-expanded="false"
                                aria-controls="submenu-2"><i class="fa fa-fw fa-file"></i>Report</a>
                             <div id="submenu-2" class="collapse submenu" style="">
 
@@ -148,120 +148,127 @@
             <div class="container-fluid dashboard-content ">
                 <div class="ecommerce-widget">
 
+
                     <div class="row">
                         <!-- ============================================================== -->
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
-                                <h5 class="card-header">Staff Manager</h5>
+                                <h5 class="card-header">Select period to report</h5>
                                 <div class="card-body">
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="inputText3" class="col-form-label">Name</label>
-                                            <input id="inputText3" type="text" class="form-control">
+                                    <h5>From</h5>
+                                    <div class="form-group">
+                                        <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" />
+                                            <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="inputEmail">Phone</label>
-                                            <input id="inputEmail" type="email" placeholder="name@example.com" class="form-control">
-                                            <p>We'll never share your email with anyone else.</p>
+                                    </div>
+                                    <h5>To</h5>
+                                    <div class="form-group">
+                                        <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" />
+                                            <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="inputText4" class="col-form-label">Address</label>
-                                            <input id="inputText4" type="number" class="form-control" placeholder="Numbers">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputPassword">Type</label>
-                                            <input id="inputPassword" type="password" placeholder="Password" class="form-control">
-                                        </div>
-                                        <div class="custom-file mb-3">
-                                            <input type="file" class="custom-file-input" id="customFile">
-                                            <label class="custom-file-label" for="customFile">File Input</label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlTextarea1">Employed Time</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                        </div>
-                                    </form>
-                                    <button class="btn btn-primary d-inline-block" type="submit">Submit</button>
+                                    </div>
+                                    <button class="btn btn-primary">Print Report</button>
                                 </div>
 
                             </div>
                         </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Summary</h5>
+                                <div class="card-body">
+                                    <h5><i class="fas fa-check mr-2"></i><b class="mr-2">Maximum:</b>   123 </h5>
+                                    <h5><i class="fas fa-times mr-2"></i><b class="mr-2">Minimum:</b>   23 </h5>
+                                    <h5><i class="fas fa-calculator mr-2"></i><b class="mr-2">Average:</b>   73</h5>
+
+                                </div>
+
+                            </div>
+                        </div>
+
                         <!-- ============================================================== -->
 
                         <!-- recent orders  -->
                         <!-- ============================================================== -->
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
-                                <h5 class="card-header">Staff manager</h5>
+                                <h5 class="card-header">Recent Orders</h5>
                                 <div class="card-body p-0">
                                     <div class="table-responsive">
                                         <table class="table">
                                             <thead class="bg-light">
                                             <tr class="border-0">
-                                                <th class="border-0">Name</th>
-                                                <th class="border-0">Phone</th>
-                                                <th class="border-0">Address</th>
-                                                <th class="border-0">Type</th>
-                                                <th class="border-0">Employed Time</th>
-                                                
+                                                <th class="border-0">Book ID</th>
+                                                <th class="border-0">Time</th>
+                                                <th class="border-0">First amount</th>
+                                                <th class="border-0">Last Amount</th>
+                                               
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <tr>
                                                 <td>1</td>
                                                 <td>
-                                                    <div class="m-r-10"><img src="assets/images/product-pic.jpg"
+                                                    <div class="m-r-10"><img src="assets_admin/images/product-pic.jpg"
                                                                              alt="user" class="rounded" width="45">
                                                     </div>
                                                 </td>
                                                 <td>Product #1</td>
                                                 <td>id000001</td>
-                                                <td>20</td>
                                                 
                                             </tr>
                                             <tr>
                                                 <td>2</td>
                                                 <td>
-                                                    <div class="m-r-10"><img src="assets/images/product-pic-2.jpg"
+                                                    <div class="m-r-10"><img src="assets_admin/images/product-pic-2.jpg"
                                                                              alt="user" class="rounded" width="45">
                                                     </div>
                                                 </td>
                                                 <td>Product #2</td>
                                                 <td>id000002</td>
-                                                <td>12</td>
                                                 
                                             </tr>
                                             <tr>
                                                 <td>3</td>
                                                 <td>
-                                                    <div class="m-r-10"><img src="assets/images/product-pic-3.jpg"
+                                                    <div class="m-r-10"><img src="assets_admin/images/product-pic-3.jpg"
                                                                              alt="user" class="rounded" width="45">
                                                     </div>
                                                 </td>
                                                 <td>Product #3</td>
                                                 <td>id000003</td>
-                                                <td>23</td>
-                                                
+                                               
                                             </tr>
                                             <tr>
                                                 <td>4</td>
                                                 <td>
-                                                    <div class="m-r-10"><img src="assets/images/product-pic-4.jpg"
+                                                    <div class="m-r-10"><img src="assets_admin/images/product-pic-4.jpg"
                                                                              alt="user" class="rounded" width="45">
                                                     </div>
                                                 </td>
                                                 <td>Product #4</td>
                                                 <td>id000004</td>
-                                                <td>34</td>
-                                               
+                                              
                                             </tr>
-                                            <tr>
-                                                <td colspan="9"><a href="#" class="btn btn-outline-light float-right">View
-                                                    Details</a></td>
-                                            </tr>
+
                                             </tbody>
                                         </table>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Bar Charts</h5>
+                                <div class="card-body">
+                                    <canvas id="chartjs_bar"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -269,61 +276,61 @@
                         <!-- end recent orders  -->
                     </div>
 
+
                 </div>
-
-
             </div>
         </div>
-    </div>
-    <!-- ============================================================== -->
-    <!-- footer -->
-    <!-- ============================================================== -->
-    <div class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                    Copyright © 2019 <b>EZLIFE</b>. All rights reserved. Base on <b>Colorlib</b>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="text-md-right footer-links d-none d-sm-block">
-                        <a href="javascript: void(0);">About</a>
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                        Copyright © 2019 <b>EZLIFE</b>. All rights reserved. Base on <b>Colorlib</b>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="text-md-right footer-links d-none d-sm-block">
+                            <a href="javascript: void(0);">About</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- ============================================================== -->
+        <!-- end footer -->
+        <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
-    <!-- end footer -->
+    <!-- end wrapper  -->
     <!-- ============================================================== -->
-</div>
-<!-- ============================================================== -->
-<!-- end wrapper  -->
-<!-- ============================================================== -->
 </div>
 <!-- ============================================================== -->
 <!-- end main wrapper  -->
 <!-- ============================================================== -->
 <!-- Optional JavaScript -->
 <!-- jquery 3.3.1 -->
-<script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="assets_admin/vendor/jquery/jquery-3.3.1.min.js"></script>
 <!-- bootstap bundle js -->
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="assets_admin/vendor/bootstrap/js/bootstrap.bundle.js"></script>
 <!-- slimscroll js -->
-<script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+<script src="assets_admin/vendor/slimscroll/jquery.slimscroll.js"></script>
 <!-- main js -->
-<script src="assets/libs/js/main-js.js"></script>
+<script src="assets_admin/libs/js/main-js.js"></script>
 <!-- chart chartist js -->
-<script src="assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
+<script src="assets_admin/vendor/charts/chartist-bundle/chartist.min.js"></script>
 <!-- sparkline js -->
-<script src="assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
+<script src="assets_admin/vendor/charts/sparkline/jquery.sparkline.js"></script>
 <!-- morris js -->
-<script src="assets/vendor/charts/morris-bundle/raphael.min.js"></script>
-<script src="assets/vendor/charts/morris-bundle/morris.js"></script>
+<script src="assets_admin/vendor/charts/morris-bundle/raphael.min.js"></script>
+<script src="assets_admin/vendor/charts/morris-bundle/morris.js"></script>
 <!-- chart c3 js -->
-<script src="assets/vendor/charts/c3charts/c3.min.js"></script>
-<script src="assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
-<script src="assets/vendor/charts/c3charts/C3chartjs.js"></script>
-<script src="assets/libs/js/dashboard-ecommerce.js"></script>
+<script src="assets_admin/vendor/charts/c3charts/c3.min.js"></script>
+<script src="assets_admin/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+<script src="assets_admin/vendor/charts/c3charts/C3chartjs.js"></script>
+<script src="assets_admin/libs/js/dashboard-ecommerce.js"></script>
+
+
 </body>
 
 </html>
