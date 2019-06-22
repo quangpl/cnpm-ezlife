@@ -2,26 +2,23 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const ImportSchema = new Schema({
-    bookId: {
+const StaffTypeSchema = new Schema({
+    _id: {
         type: String,
         required: true
     },
-    bookTypeId: {
+    name: {
         type: String,
         required: true
     },
-    unitPrice: {
-        type: Number,
-        required: true
-    },
-    amount: {
-        type: Number,
-        require: true
-    },
+    isAdmin: {
+        type: Boolean,
+        required: true,
+        default: false
+    }
 }, {
     timestamps: true,
     versionKey: false
 });
 
-module.exports = ImportSchema;
+module.exports = StaffTypeSchema;

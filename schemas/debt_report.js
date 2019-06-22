@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const DebtReportSchema = new Schema({
     customerId: {
-        type: String,
+        type: Schema.ObjectId,
         required: true
     },
     time: {

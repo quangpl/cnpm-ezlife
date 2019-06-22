@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const SalarySchema = new Schema({
     employeeId: {
-        type: String,
+        type: Schema.ObjectId,
         required: true
     },
     basicSalary: {

@@ -3,20 +3,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const BookSchema = new Schema({
-    type: {
-        type: {
-            id: {
-                type: String,
-                required: true
-            },
-            name: {
-                type: String,
-                required: true
-            }
-        },
+    name: {
+        type: String,
         required: true
     },
-    name: {
+    typeId: {
         type: String,
         required: true
     },
@@ -24,11 +15,11 @@ const BookSchema = new Schema({
         type: String,
         required: true
     },
-    publisher: {
-        type: String,
+    numberOf: {
+        type: Number,
         required: true
     },
-    amount: {
+    unitPrice: {
         type: Number,
         required: true
     },

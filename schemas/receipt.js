@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const ReceiptSchema = new Schema({
     customerId: {
-        type: String,
+        type: Schema.ObjectId,
         required: true
     },
     numberOfMoney: {
