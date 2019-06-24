@@ -17,12 +17,26 @@ const BookSchema = new Schema({
     },
     numberOf: {
         type: Number,
-        required: true
+        required: true,
+        default: 0
     },
     unitPrice: {
         type: Number,
         required: true
     },
+    shortDesc: {
+        type: String,
+        required: true
+    },
+    fullDesc: {
+        type: String,
+        required: true
+    },
+    image :{
+        type: String,
+        required: true,
+        default: 'https://via.placeholder.com/600'
+    }
 }, {
     timestamps: true,
     versionKey: false
