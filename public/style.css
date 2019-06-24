@@ -1025,8 +1025,8 @@ body {
 /*  13.	About Page CSS
 /*----------------------------------------*/
 .breadcrumbs-area {
-  background: rgba(0, 0, 0, 0) url("img/header-bg.jpg") no-repeat scroll center center;
-  color: #fefefe;
+  background-image: linear-gradient(#31B5F3, #31B5F3);
+  color: #fff;
   text-align: center;
   text-transform: capitalize;
 }
