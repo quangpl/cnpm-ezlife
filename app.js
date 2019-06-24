@@ -60,7 +60,7 @@ let http = require('http');
     });
 
     if (mongoose.connection.readyState === 1) {
-        console.log(`Connect to Database successfully `)
+        console.log(`Connect to database successfully `)
     }
 })();
 
@@ -144,7 +144,7 @@ function onListening() {
     var bind = typeof addr === 'string'
         ? 'pipe ' + addr
         : 'port ' + addr.port;
-    console.log('Server is listening ' + bind);
-    console.log('Link : localhost:3000')
+    console.log('Server is listening on ' + bind);
+    console.log('Enter your link: http://localhost:3000')
 }
 
