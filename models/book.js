@@ -3,19 +3,27 @@ const BookSchema = require('../schemas/book');
 let Book = mongoose.model("Book", BookSchema);
 
 Book.add = async ({
-                      type,
+                      typeId,
                       name,
                       author,
                       numberOf,
-                      unitPrice: unitPrice
+                      unitPrice,
+                      shortDesc,
+                      fullDesc,
+                      image,
+                      tag
                   }) => {
 
     let newBook = new Book({
-        type: type,
+        typeId: typeId,
         name: name,
         author: author,
         numberOf: numberOf,
-        unitPrice: unitPrice
+        unitPrice: unitPrice,
+        shortDesc: shortDesc,
+        fullDesc: fullDesc,
+        image: image,
+        tag: tag
     });
 
     await newBook.save();
@@ -28,7 +36,11 @@ Book.update = async ({
                          name,
                          author,
                          numberOf,
-                         unitPrice: unitPrice
+                         unitPrice,
+                         shortDesc,
+                         fullDesc,
+                         image,
+                         tag
                      }) => {
 
     return await Book.updateOne({
@@ -38,7 +50,11 @@ Book.update = async ({
         name: name,
         author: author,
         numberOf: numberOf,
-        unitPrice: unitPrice
+        unitPrice: unitPrice,
+        shortDesc: shortDesc,
+        fullDesc: fullDesc,
+        image: image,
+        tag: tag
     }).exec();
 };
 
@@ -78,6 +94,8 @@ Book.isValid = async ({id, numberOfSale}) => {
     return book.numberOf - numberOfSale >= 20;
 };
 
-
-
+Book.findBook = async()=>{
+    let book = await Book.find({$text: { $search: "car" } });
+    console.log(book);
+};
 module.exports = Book;
