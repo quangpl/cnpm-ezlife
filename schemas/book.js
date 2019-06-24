@@ -36,6 +36,12 @@ const BookSchema = new Schema({
         type: String,
         required: true,
         default: 'https://via.placeholder.com/600'
+    },
+    tag: {
+        type :[String],
+        required: true,
+        default : ['book'],
+        index:true
     }
 }, {
     timestamps: true,
