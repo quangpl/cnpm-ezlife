@@ -3,7 +3,7 @@ let router = express.Router();
 let Book = require('../models/book');
 
 router.get('/', function(req, res, next) {
-    res.send('respond with a resource');
+    res.render('./pages/index');
 });
 
 module.exports = router;
