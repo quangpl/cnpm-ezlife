@@ -63,3 +63,25 @@
 </body>
 
 </html>
+
+<script>
+    $(document).ready(function () {
+        $('#login-submit').click(function (e) {
+            e.preventDefault();
+            $.post('/admin/login', {
+                username: $('#username').val(),
+                password: $('#password').val(),
+
+            }, function (result) {
+
+                console.log(result);
+                if (result.success == true) {
+                    $('#status-sucess').css('display', 'flex');
+                } else {
+                    $('#status-fail').css('display', 'flex');
+                }
+            });
+
+        });
+    });
+</script>

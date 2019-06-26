@@ -316,3 +316,26 @@
 </body>
 
 </html>
+
+<script>
+    $(document).ready(function () {
+        $('#setting-submit').click(function (e) {
+            e.preventDefault();
+            $.post('/admin/setting', {
+                settingId: $('#settingId').val(),
+                desciption: $('#description').val(),
+                value: $('#value').val(),
+                password: $('#password').val(),
+            }, function (result) {
+
+                console.log(result);
+                if (result.success == true) {
+                    $('#status-sucess').css('display', 'flex');
+                } else {
+                    $('#status-fail').css('display', 'flex');
+                }
+            });
+
+        });
+    });
+</script>

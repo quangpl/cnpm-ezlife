@@ -327,3 +327,26 @@
 </body>
 
 </html>
+
+<script>
+    $(document).ready(function () {
+        $('#staffmanager-submit').click(function (e) {
+            e.preventDefault();
+            $.post('/admin/staffmanager', {
+                Name: $('#Name').val(),
+                Phone: $('#Phone').val(),
+                Address: $('#Address').val(),
+                Type: $('#Type').val(),
+            }, function (result) {
+
+                console.log(result);
+                if (result.success == true) {
+                    $('#status-sucess').css('display', 'flex');
+                } else {
+                    $('#status-fail').css('display', 'flex');
+                }
+            });
+
+        });
+    });
+</script>
