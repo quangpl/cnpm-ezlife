@@ -310,3 +310,28 @@
 </body>
 
 </html>
+
+<script>
+    $(document).ready(function () {
+        $('#customer-submit').click(function (e) {
+            e.preventDefault();
+            $.post('/admin/customer', {
+                customerId: $('#customerId').val(),
+                customerName: $('#customerName').val(),
+                phone: $('#phone').val(),
+                address: $('#address').val(),
+                email: $('#email').val(),
+                dept: $('#dept').val(),
+            }, function (result) {
+
+                console.log(result);
+                if (result.success == true) {
+                    $('#status-sucess').css('display', 'flex');
+                } else {
+                    $('#status-fail').css('display', 'flex');
+                }
+            });
+
+        });
+    });
+</script>

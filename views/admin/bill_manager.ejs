@@ -335,3 +335,27 @@
 </body>
 
 </html>
+
+<script>
+    $(document).ready(function () {
+        $('#bill-submit').click(function (e) {
+            e.preventDefault();
+            $.post('/admin/bill', {
+                billId: $('#billId').val(),
+                customerId: $('#customerId').val(),
+                email: $('#email').val(),
+                price: $('#price').val(),
+                book: $('#book').val(),
+            }, function (result) {
+
+                console.log(result);
+                if (result.success == true) {
+                    $('#status-sucess').css('display', 'flex');
+                } else {
+                    $('#status-fail').css('display', 'flex');
+                }
+            });
+
+        });
+    });
+</script>
