@@ -18,7 +18,7 @@ const BookSchema = new Schema({
     numberOf: {
         type: Number,
         required: true,
-        default: 0
+        default: 50
     },
     unitPrice: {
         type: Number,

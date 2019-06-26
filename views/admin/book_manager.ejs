@@ -6,15 +6,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets_admin/vendor/bootstrap/css/bootstrap.min.css">
-    <link href="assets_admin/vendor/fonts/circular-std/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets_admin/libs/css/style.css">
-    <link rel="stylesheet" href="assets_admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
-    <link rel="stylesheet" href="assets_admin/vendor/charts/chartist-bundle/chartist.css">
-    <link rel="stylesheet" href="assets_admin/vendor/charts/morris-bundle/morris.css">
-    <link rel="stylesheet" href="assets_admin/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="assets_admin/vendor/charts/c3charts/c3.css">
-    <link rel="stylesheet" href="assets_admin/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <link rel="stylesheet" href="/assets_admin/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="/assets_admin/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets_admin/libs/css/style.css">
+    <link rel="stylesheet" href="/assets_admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="/assets_admin/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="/assets_admin/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" href="/assets_admin/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/assets_admin/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="/assets_admin/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <title>Quản trị nhà sách | EZLIFE </title>
 </head>
 
@@ -43,7 +43,7 @@
 
                     <li class="nav-item dropdown nav-user">
                         <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false"><img src="assets_admin/images/avatar-1.jpg" alt=""
+                           aria-haspopup="true" aria-expanded="false"><img src="/assets_admin/images/avatar-1.jpg" alt=""
                                                                            class="user-avatar-md rounded-circle"></a>
                         <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
                              aria-labelledby="navbarDropdownMenuLink2">
@@ -155,32 +155,48 @@
                             <div class="card">
                                 <h5 class="card-header">Basic Form</h5>
                                 <div class="card-body">
-                                    <form>
+                                    <form method="post" action="/admin/book">
                                         <div class="form-group">
-                                            <label for="inputText3" class="col-form-label">ID</label>
-                                            <input id="inputText3" type="text" class="form-control">
+                                            <label for="inputText3" class="col-form-label">Type ID</label>
+                                            <input id="inputText3" type="text" name="typeId" class="form-control">
                                         </div>
                                     
                                         <div class="form-group">
                                             <label for="inputText4" class="col-form-label">Name</label>
-                                            <input id="inputText4" type="text" class="form-control" >
+                                            <input id="inputText4" type="text" name="name" class="form-control" >
                                         </div>
                                         <div class="form-group">
                                             <label for="inputText5">Author</label>
-                                            <input id="inputText5" type="text" class="form-control">
+                                            <input id="inputText5" type="text" name="author" class="form-control">
                                         </div>
                                         <div class="form-group">
                                             <label for="inputText6">Amount</label>
-                                            <input id="inputText6" type="number" class="form-control">
+                                            <input id="inputText6" type="number" name="numberOf" class="form-control">
                                         </div>
                                         <div class="form-group">
                                             <label for="inputText7">Unit Price</label>
-                                            <input id="inputText7" type="number" class="form-control">
+                                            <input id="inputText7" type="number" name="unitPrice" class="form-control">
                                         </div>
-                                
-                            
+                                        <div class="form-group">
+                                            <label for="inputText7">Short Description</label>
+                                            <input id="inputText7" type="text" name="shortDesc" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputText7">Full Description</label>
+                                            <input id="inputText7" type="text" name="fullDesc" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputText7">Image</label>
+                                            <input id="inputText7" type="text" name="image" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputText7">Tag</label>
+                                            <input id="inputText7" type="text" name="tag" class="form-control">
+                                        </div>
+
+                                        <button class="btn btn-primary d-inline-block" id="book-submit" type="submit">Submit</button>
+
                                     </form>
-                                    <button class="btn btn-primary d-inline-block" type="submit">Submit</button>
                                 </div>
 
                             </div>
@@ -210,7 +226,7 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>
-                                                    <div class="m-r-10"><img src="assets_admin/images/product-pic.jpg"
+                                                    <div class="m-r-10"><img src="/assets_admin/images/product-pic.jpg"
                                                                              alt="user" class="rounded" width="45">
                                                     </div>
                                                 </td>
@@ -223,7 +239,7 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>
-                                                    <div class="m-r-10"><img src="assets_admin/images/product-pic.jpg"
+                                                    <div class="m-r-10"><img src="/assets_admin/images/product-pic.jpg"
                                                                              alt="user" class="rounded" width="45">
                                                     </div>
                                                 </td>
@@ -236,7 +252,7 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>
-                                                    <div class="m-r-10"><img src="assets_admin/images/product-pic.jpg"
+                                                    <div class="m-r-10"><img src="/assets_admin/images/product-pic.jpg"
                                                                              alt="user" class="rounded" width="45">
                                                     </div>
                                                 </td>
@@ -249,7 +265,7 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>
-                                                    <div class="m-r-10"><img src="assets_admin/images/product-pic.jpg"
+                                                    <div class="m-r-10"><img src="/assets_admin/images/product-pic.jpg"
                                                                              alt="user" class="rounded" width="45">
                                                     </div>
                                                 </td>
@@ -307,25 +323,52 @@
 <!-- ============================================================== -->
 <!-- Optional JavaScript -->
 <!-- jquery 3.3.1 -->
-<script src="assets_admin/vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="/assets_admin/vendor/jquery/jquery-3.3.1.min.js"></script>
 <!-- bootstap bundle js -->
-<script src="assets_admin/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="/assets_admin/vendor/bootstrap/js/bootstrap.bundle.js"></script>
 <!-- slimscroll js -->
-<script src="assets_admin/vendor/slimscroll/jquery.slimscroll.js"></script>
+<script src="/assets_admin/vendor/slimscroll/jquery.slimscroll.js"></script>
 <!-- main js -->
-<script src="assets_admin/libs/js/main-js.js"></script>
+<script src="/assets_admin/libs/js/main-js.js"></script>
 <!-- chart chartist js -->
-<script src="assets_admin/vendor/charts/chartist-bundle/chartist.min.js"></script>
+<script src="/assets_admin/vendor/charts/chartist-bundle/chartist.min.js"></script>
 <!-- sparkline js -->
-<script src="assets_admin/vendor/charts/sparkline/jquery.sparkline.js"></script>
+<script src="/assets_admin/vendor/charts/sparkline/jquery.sparkline.js"></script>
 <!-- morris js -->
-<script src="assets_admin/vendor/charts/morris-bundle/raphael.min.js"></script>
-<script src="assets_admin/vendor/charts/morris-bundle/morris.js"></script>
+<script src="/assets_admin/vendor/charts/morris-bundle/raphael.min.js"></script>
+<script src="/assets_admin/vendor/charts/morris-bundle/morris.js"></script>
 <!-- chart c3 js -->
-<script src="assets_admin/vendor/charts/c3charts/c3.min.js"></script>
-<script src="assets_admin/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
-<script src="assets_admin/vendor/charts/c3charts/C3chartjs.js"></script>
-<script src="assets_admin/libs/js/dashboard-ecommerce.js"></script>
+<script src="/assets_admin/vendor/charts/c3charts/c3.min.js"></script>
+<script src="/assets_admin/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+<script src="/assets_admin/vendor/charts/c3charts/C3chartjs.js"></script>
+<script src="/assets_admin/libs/js/dashboard-ecommerce.js"></script>
 </body>
 
 </html>
+<!--<script>-->
+
+<!--    $('#book-submit').on('click',function(event) {-->
+<!--        event.preventDefault();-->
+<!--        $.ajax({-->
+<!--            url: '/admin/book/',-->
+<!--            method: 'POST',-->
+<!--            data: {-->
+<!--                typeId:$('#typeId'),-->
+<!--                name: $('#name'),-->
+<!--                author: $('#author'),-->
+<!--                numberOf: $('#numberOf'),-->
+<!--                unitPrice: $('#unitPrice'),-->
+<!--                shortDesc: $('#shortDesc'),-->
+<!--                fullDesc: $('#fullDesc'),-->
+<!--                image :$('#image'),-->
+<!--                tag :$('#tag')-->
+<!--            }-->
+<!--        }).done(function(res) {-->
+<!--            if (res.success) {-->
+<!--              alert('Add success')-->
+<!--                window.location.reload();-->
+<!--            } else {-->
+<!--                console.log('Add fail');-->
+<!--            }-->
+<!--        });-->
+</script>
