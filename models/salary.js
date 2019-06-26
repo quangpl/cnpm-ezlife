@@ -3,12 +3,12 @@ const SalarySchema = require('../schemas/Salary');
 let Salary = mongoose.model("Salary", SalarySchema);
 
 Salary.add = async ({
-                      employeeId,
-                      basicSalary,
-                      bonus,
-                      tax,
-                      insurance
-                  }) => {
+                        employeeId,
+                        basicSalary,
+                        bonus,
+                        tax,
+                        insurance
+                    }) => {
 
     let newSalary = new Salary({
         employeeId: employeeId,
@@ -23,13 +23,13 @@ Salary.add = async ({
 };
 
 Salary.update = async ({
-                         id,
-                         employeeId,
-                         basicSalary,
-                         bonus,
-                         tax,
-                         insurance
-                     }) => {
+                           id,
+                           employeeId,
+                           basicSalary,
+                           bonus,
+                           tax,
+                           insurance
+                       }) => {
 
     return await Salary.updateOne({
         _id: id

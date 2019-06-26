@@ -6970,6 +6970,9 @@ Media Query
 .simple-card .nav.nav-tabs .nav-item .nav-link {
     padding: 17px 29px;}
 }
+.hide{
+    display: none;
+}
 
 
 
