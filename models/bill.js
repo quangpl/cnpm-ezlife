@@ -44,6 +44,12 @@ Bill.delete = async (id) => {
     }).exec();
 };
 
+Bill.getById = async (id) => {
+    return await Bill.findOne({
+        _id: id
+    }).exec();
+};
+
 Bill.getValue = async (listBook) => {
     let value = 0;
     let books = [];
