@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
+let Book = require('../models/book')
 
-
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
     res.render('admin');
 });
 
-router.get('/bill', function(req, res, next) {
+router.get('/bill', function (req, res, next) {
     res.render('admin/bill_manager');
 });
 
@@ -31,7 +31,7 @@ router.post('/bill', async function (req, res, next) {
     }
 });
 
-router.get('/customer', function(req, res, next) {
+router.get('/customer', function (req, res, next) {
     res.render('admin/customer_manager');
 });
 
@@ -57,8 +57,10 @@ router.post('/customer', async function (req, res, next) {
     }
 });
 
-router.get('/book', function(req, res, next) {
-    res.render('admin/book_manager');
+router.get('/book', async function (req, res, next) {
+    let books = await Book.getAll();
+
+    res.render('admin/book_manager', {books: books});
 });
 
 router.post('/book', async function (req, res, next) {
@@ -87,7 +89,7 @@ router.post('/book', async function (req, res, next) {
     }
 });
 
-router.get('/staff', function(req, res, next) {
+router.get('/staff', function (req, res, next) {
     res.render('admin/staff_manager');
 });
 
@@ -113,11 +115,11 @@ router.post('/staff', async function (req, res, next) {
     }
 });
 
-router.get('/report', function(req, res, next) {
+router.get('/report', function (req, res, next) {
     res.render('admin/report');
 });
 
-router.get('/setting', function(req, res, next) {
+router.get('/setting', function (req, res, next) {
     res.render('admin/setting');
 });
 
@@ -140,7 +142,7 @@ router.post('/setting', async function (req, res, next) {
     }
 });
 
-router.get('/login', function(req, res, next) {
+router.get('/login', function (req, res, next) {
     res.render('admin/login');
 });
 
