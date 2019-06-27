@@ -36,12 +36,6 @@
             </button>
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto navbar-right-top">
-                    <li class="nav-item">
-                        <div id="custom-search" class="top-search-bar">
-                            <input class="form-control" type="text" placeholder="Search..">
-                        </div>
-                    </li>
-
                     <li class="nav-item dropdown nav-user">
                         <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false"><img src="/assets_admin/images/avatar-1.jpg"
@@ -159,40 +153,40 @@
                                     <form>
                                         <div class="form-group">
                                             <label for="inputText3" class="col-form-label">Type ID</label>
-                                            <input type="text" name="typeId" id="typeId" class="form-control">
+                                            <input type="text" name="typeId" id="typeId" class="form-control" required>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="inputText4" class="col-form-label">Name</label>
-                                            <input id="name" type="text" name="name" class="form-control">
+                                            <input id="name" type="text" name="name" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputText5">Author</label>
-                                            <input type="text" id="author" name="author" class="form-control">
+                                            <input type="text" id="author" name="author" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputText6">Amount</label>
-                                            <input type="number" name="numberOf" id="numberOf" class="form-control">
+                                            <input type="number" name="numberOf" id="numberOf" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputText7">Unit Price</label>
-                                            <input id="unitPrice" type="number" name="unitPrice" class="form-control">
+                                            <input id="unitPrice" type="number" name="unitPrice" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputText7">Short Description</label>
-                                            <input id="shortDesc" type="text" name="shortDesc" class="form-control">
+                                            <input id="shortDesc" type="text" name="shortDesc" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputText7">Full Description</label>
-                                            <input id="fullDesc" type="text" name="fullDesc" class="form-control">
+                                            <input id="fullDesc" type="text" name="fullDesc" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputText7">Image</label>
-                                            <input id="image" type="text" name="image" class="form-control">
+                                            <input id="image" type="text" name="image" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputText7">Tag</label>
-                                            <input id="tag" type="text" name="tag" class="form-control">
+                                            <input id="tag" type="text" name="tag" class="form-control" required>
                                         </div>
                                         <div id="status-sucess" class="alert alert-success hide">
                                             Add book success !
@@ -201,7 +195,7 @@
                                             Add book fail !
                                         </div>
                                         <button class="btn btn-primary d-inline-block" id="book-submit" type="submit">
-                                            Submit
+                                           <i class="fa fa-save"></i> SAVE
                                         </button>
 
                                     </form>
@@ -215,7 +209,9 @@
                         <!-- ============================================================== -->
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
-                                <h5 class="card-header">Recent <Books></Books></h5>
+                                <h5 class="card-header">Recent
+                                    <Books></Books>
+                                </h5>
                                 <div class="card-body p-0">
                                     <div class="table-responsive">
                                         <table class="table">
@@ -236,26 +232,26 @@
                                             </thead>
                                             <tbody>
 
-                                            <%books.forEach((e)=>{%>
-                                            <tr>
-                                                <td><%=e._id%></td>
-                                                <td>
-                                                    <div class="m-r-10"><img src="<%=e.image%>"
-                                                                             alt="user" class="rounded" width="45">
-                                                    </div>
-                                                </td>
-                                                <td><%=e.name%></td>
-                                                <td><%=e.author%></td>
-                                                <td><%=e.numberOf%></td>
-                                                <td><%=e.unitPrice%></td>
-                                                <td><%=e.typeId%></td>
-                                                <td><i style="color:blue;" class="fa fa-edit"></i> </td>
-                                                <td><i style="color:red;" class="fa fa-trash"></i> </td>
+                                            <% books.forEach((e)=>{ %>
+                                                <tr>
+                                                    <td><%= e._id %></td>
+                                                    <td>
+                                                        <div class="m-r-10"><img src="<%= e.image %>"
+                                                                                 alt="user" class="rounded" width="45">
+                                                        </div>
+                                                    </td>
+                                                    <td><%= e.name %></td>
+                                                    <td><%= e.author %></td>
+                                                    <td><%= e.numberOf %></td>
+                                                    <td><%= e.unitPrice %></td>
+                                                    <td><%= e.typeId %></td>
+                                                    <td><i data-id="<%= e._id %>" onclick="editBook(this)"
+                                                           class="fa fa-edit button-edit"></i></td>
+                                                    <td><i data-id="<%= e._id %>" onclick="deleteBook(this)" class="fa fa-trash button-delete"></i>
+                                                    </td>
 
-                                            </tr>
-                                            <%})%>
-
-
+                                                </tr>
+                                            <% }) %>
 
                                             <tr>
                                                 <td colspan="9"><a href="#" class="btn btn-outline-light float-right">View
@@ -312,34 +308,11 @@
 <script src="/assets_admin/vendor/slimscroll/jquery.slimscroll.js"></script>
 <!-- main js -->
 <script src="/assets_admin/libs/js/main-js.js"></script>
+<!-- behavior js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css">
+<script src="/assets_admin/libs/js/scripts.js"></script>
 </body>
 
 </html>
 
-<script>
-    $(document).ready(function () {
-        $('#book-submit').click(function (e) {
-            e.preventDefault();
-            $.post('/admin/book', {
-                typeId: $('#typeId').val(),
-                name: $('#name').val(),
-                author: $('#author').val(),
-                numberOf: $('#numberOf').val(),
-                unitPrice: $('#unitPrice').val(),
-                shortDesc: $('#shortDesc').val(),
-                fullDesc: $('#fullDesc').val(),
-                image: $('#image').val(),
-                tag: $('#tag').val()
-            }, function (result) {
-
-                console.log(result);
-                if (result.success == true) {
-                    $('#status-sucess').css('display', 'flex');
-                } else {
-                    $('#status-fail').css('display', 'flex');
-                }
-            });
-
-        });
-    });
-</script>

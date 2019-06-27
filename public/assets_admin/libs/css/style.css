@@ -7243,6 +7243,25 @@ Media Query
     display: none;
 }
 
+.button-edit {
+    color: #3399FF;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+.button-edit:hover {
+    color: #003399;
+}
+
+.button-delete {
+    cursor: pointer;
+    color: #FF3333;
+    font-size: 21px;
+}
+
+.button-delete:hover {
+    color: #990033;
+}
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 320px) {
