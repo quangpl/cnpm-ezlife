@@ -67,13 +67,13 @@ Book.delete = async (id) => {
 
 Book.getById = async (id) => {
     return await Book.findOne({
-        _id: id
+        _id: mongoose.Types.ObjectId(id)
     }).exec();
 };
 
 Book.getPriceById = async (id) => {
     let book = await Book.findOne({
-        _id: id
+        _id: mongoose.Types.ObjectId(id)
     }).exec();
     return book.unitPrice;
 };
@@ -81,6 +81,15 @@ Book.getPriceById = async (id) => {
 Book.getAll = async () => {
     return await Book.find({}).exec();
 };
+
+Book.getAllByNumber = async (num) => {
+    return await Book.find({}).limit(num).exec();
+};
+
+Book.getByCategory = async (category) => {
+    return await Book.find({typeId: category}).exec();
+};
+
 
 Book.getPriceToSale = async (id) => {
     let book = await Book.find({}).exec();
@@ -94,8 +103,8 @@ Book.isValid = async ({id, numberOfSale}) => {
     return book.numberOf - numberOfSale >= 20;
 };
 
-Book.findBook = async()=>{
-    let book = await Book.find({$text: { $search: "car" } });
+Book.findBook = async () => {
+    let book = await Book.find({$text: {$search: "car"}});
     console.log(book);
 };
 module.exports = Book;
