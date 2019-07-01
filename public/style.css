@@ -1,17 +1,17 @@
 /*-----------------------------------------------------------------------------------
 
-    Template Name: Your template name 
-    Template URI: 
+    Template Name: Your template name
+    Template URI:
     Description: This is html5 template
     Author: BootExperts
-    Author URI: 
+    Author URI:
     Version: 1.0
 
 -----------------------------------------------------------------------------------
-    
+
     CSS INDEX
     ===================
-	
+
     1.	Theme Default CSS (body, link color, section etc)
 	2.	Header Area CSS
 	3.	Slider Area CSS
@@ -36,7 +36,7 @@
 	22.	My Account CSS
 	23.	scrollUp CSS
 
-	
+
 
 
 -----------------------------------------------------------------------------------*/
@@ -2985,5 +2985,5 @@ h3.widget-title-modal {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    width: 60%;
 }
