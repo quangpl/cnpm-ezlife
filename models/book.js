@@ -87,24 +87,31 @@ Book.getAllByNumber = async (num) => {
 };
 
 Book.getByCategory = async (category) => {
-    return await Book.find({typeId: category}).exec();
+    return await Book.find({
+        typeId: category
+    }).exec();
 };
 
 
 Book.getPriceToSale = async (id) => {
     let book = await Book.find({}).exec();
-    return book.unitPrice * 1.05;  //todo : get parameter from setting db
+    return book.unitPrice * 1.05; //todo : get parameter from setting db
 };
 
-Book.isValid = async ({id, numberOfSale}) => {
+Book.isValid = async ({
+                          id,
+                          numberOfSale
+                      }) => {
     let book = await Book.findOne({
         _id: id
     }).exec();
     return book.numberOf - numberOfSale >= 20;
 };
 
-Book.findBook = async () => {
-    let book = await Book.find({$text: {$search: "car"}});
-    console.log(book);
+Book.getByListId = async (listId) => {
+    return Promise.all(listId.map(async (e) => {
+        let book = await Book.getById(e);
+        return book;
+    }));
 };
 module.exports = Book;

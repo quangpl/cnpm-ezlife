@@ -4,7 +4,6 @@ let Book = require('../models/book');
 
 router.get('/', async function (req, res, next) {
     let books = await Book.getAllByNumber(10)
-    console.log(books);
     res.render('./pages/index', {books: books});
 });
 
