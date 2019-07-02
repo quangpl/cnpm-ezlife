@@ -38,10 +38,10 @@
         <div class="card-body">
             <form>
                 <div class="form-group">
-                    <input class="form-control form-control-lg" id="username" type="text" placeholder="Username" autocomplete="off">
+                    <input class="form-control form-control-lg" id="username" name="username" type="text" placeholder="Username" autocomplete="off">
                 </div>
                 <div class="form-group">
-                    <input class="form-control form-control-lg" id="password" type="password" placeholder="Password">
+                    <input class="form-control form-control-lg" id="password"  name="password" type="password" placeholder="Password">
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
             </form>
@@ -63,3 +63,25 @@
 </body>
 
 </html>
+
+<script>
+    $(document).ready(function () {
+        $('#login-submit').click(function (e) {
+            e.preventDefault();
+            $.post('/admin/login', {
+                username: $('#username').val(),
+                password: $('#password').val(),
+
+            }, function (result) {
+
+                console.log(result);
+                if (result.success == true) {
+                    $('#status-sucess').css('display', 'flex');
+                } else {
+                    $('#status-fail').css('display', 'flex');
+                }
+            });
+
+        });
+    });
+</script>

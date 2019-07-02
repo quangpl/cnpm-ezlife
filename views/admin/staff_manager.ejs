@@ -157,20 +157,20 @@
                                     <form>
                                         <div class="form-group">
                                             <label for="inputText3" class="col-form-label">Name</label>
-                                            <input id="inputText3" type="text" class="form-control">
+                                            <input id="Name" name="Name" type="text" class="form-control">
                                         </div>
                                         <div class="form-group">
                                             <label for="inputEmail">Phone</label>
-                                            <input id="inputEmail" type="email" placeholder="name@example.com" class="form-control">
+                                            <input id="Phone" name="Phone" type="text"  class="form-control">
                                             <p>We'll never share your email with anyone else.</p>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputText4" class="col-form-label">Address</label>
-                                            <input id="inputText4" type="number" class="form-control" placeholder="Numbers">
+                                            <input id="Address" name="Address" type="text" class="form-control" placeholder="Numbers">
                                         </div>
                                         <div class="form-group">
                                             <label for="inputPassword">Type</label>
-                                            <input id="inputPassword" type="password" placeholder="Password" class="form-control">
+                                            <input id="Type" name="Type" type="text" placeholder="Password" class="form-control">
                                         </div>
                                         <div class="custom-file mb-3">
                                             <input type="file" class="custom-file-input" id="customFile">
@@ -178,7 +178,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Employed Time</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                            <textarea class="form-control" id="EmployedTime" name="Employed Time" rows="3"></textarea>
                                         </div>
                                     </form>
                                     <button class="btn btn-primary d-inline-block" type="submit">Submit</button>
@@ -327,3 +327,26 @@
 </body>
 
 </html>
+
+<script>
+    $(document).ready(function () {
+        $('#staffmanager-submit').click(function (e) {
+            e.preventDefault();
+            $.post('/admin/staffmanager', {
+                Name: $('#Name').val(),
+                Phone: $('#Phone').val(),
+                Address: $('#Address').val(),
+                Type: $('#Type').val(),
+            }, function (result) {
+
+                console.log(result);
+                if (result.success == true) {
+                    $('#status-sucess').css('display', 'flex');
+                } else {
+                    $('#status-fail').css('display', 'flex');
+                }
+            });
+
+        });
+    });
+</script>
