@@ -68,69 +68,18 @@
                     <div class="header-right">
                         <ul>
                             <li>
-                                <a href="account.html"><i class="flaticon-people"></i></a>
+                                <%if(customerId){%>
+                                <a href="/my-account"><i class="flaticon-people"></i></a>
+                                <%} else {%>
+                                <a href="/login"><i class="flaticon-people"></i></a>
+                                <%}%>
                             </li>
                             <li class="shoping-cart">
                                 <a href="#">
                                     <i class="flaticon-shop"></i>
                                     <span>2</span>
                                 </a>
-                                <div class="add-to-cart-product">
-                                    <div class="cart-product">
-                                        <div class="cart-product-image">
-                                            <a href="single-product.html">
-                                                <img src="img/shop/1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="cart-product-info">
-                                            <p>
-                                                <span>1</span>
-                                                x
-                                                <a href="single-product.html">East of eden</a>
-                                            </p>
-                                            <a href="single-product.html">S, Orange</a>
-                                            <span class="cart-price">$ 140.00</span>
-                                        </div>
-                                        <div class="cart-product-remove">
-                                            <i class="fa fa-times"></i>
-                                        </div>
-                                    </div>
-                                    <div class="cart-product">
-                                        <div class="cart-product-image">
-                                            <a href="single-product.html">
-                                                <img src="img/shop/1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="cart-product-info">
-                                            <p>
-                                                <span>1</span>
-                                                x
-                                                <a href="single-product.html">East of eden</a>
-                                            </p>
-                                            <a href="single-product.html">S, Orange</a>
-                                            <span class="cart-price">$ 140.00</span>
-                                        </div>
-                                        <div class="cart-product-remove">
-                                            <i class="fa fa-times"></i>
-                                        </div>
-                                    </div>
-                                    <div class="total-cart-price">
-                                        <div class="cart-product-line fast-line">
-                                            <span>Shipping</span>
-                                            <span class="free-shiping">$10.50</span>
-                                        </div>
-                                        <div class="cart-product-line">
-                                            <span>Total</span>
-                                            <span class="total">$ 140.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="cart-checkout">
-                                        <a href="checkout.html">
-                                            Check out
-                                            <i class="fa fa-chevron-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
+                            
                             </li>
                         </ul>
                     </div>
@@ -142,9 +91,9 @@
                                 <li><a href="/">Trang chủ</a></li>
                                 <li><a href="#">Danh mục sách</a>
                                     <ul class="sub-menu">
-                                        <li><a href="about.html">Truyện </a></li>
-                                        <li><a href="wishlist.html">Sách tham khảo</a></li>
-                                        <li><a href="404.html">Sách giáo khoa</a></li>
+                                        <li><a href="/type?id=comic">Truyện </a></li>
+                                        <li><a href="/type?id=book">Sách tham khảo </a></li>
+                                        <li><a href="/type?id=other">Sách khác </a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -155,69 +104,17 @@
                     <div class="header-right">
                         <ul>
                             <li>
+                             <%if(customerId){%>
+                                <a href="/my-account"><i class="flaticon-people"></i></a>
+                                <%} else {%>
                                 <a href="/login"><i class="flaticon-people"></i></a>
+                                <%}%>
                             </li>
                             <li class="shoping-cart">
                                 <a href="#">
                                     <i class="flaticon-shop"></i>
                                     <span>2</span>
                                 </a>
-                                <div class="add-to-cart-product">
-                                    <div class="cart-product">
-                                        <div class="cart-product-image">
-                                            <a href="single-product.html">
-                                                <img src="img/shop/1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="cart-product-info">
-                                            <p>
-                                                <span>1</span>
-                                                x
-                                                <a href="single-product.html">East of eden</a>
-                                            </p>
-                                            <a href="single-product.html">S, Orange</a>
-                                            <span class="cart-price">$ 140.00</span>
-                                        </div>
-                                        <div class="cart-product-remove">
-                                            <i class="fa fa-times"></i>
-                                        </div>
-                                    </div>
-                                    <div class="cart-product">
-                                        <div class="cart-product-image">
-                                            <a href="single-product.html">
-                                                <img src="img/shop/1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="cart-product-info">
-                                            <p>
-                                                <span>1</span>
-                                                x
-                                                <a href="single-product.html">East of eden</a>
-                                            </p>
-                                            <a href="single-product.html">S, Orange</a>
-                                            <span class="cart-price">$ 140.00</span>
-                                        </div>
-                                        <div class="cart-product-remove">
-                                            <i class="fa fa-times"></i>
-                                        </div>
-                                    </div>
-                                    <div class="total-cart-price">
-                                        <div class="cart-product-line fast-line">
-                                            <span>Shipping</span>
-                                            <span class="free-shiping">$10.50</span>
-                                        </div>
-                                        <div class="cart-product-line">
-                                            <span>Total</span>
-                                            <span class="total">$ 140.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="cart-checkout">
-                                        <a href="checkout.html">
-                                            Check out
-                                            <i class="fa fa-chevron-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
                             </li>
                         </ul>
                     </div>
@@ -225,42 +122,27 @@
             </div>
         </div>
     </div>
-    <!--Header Area End-->
-    <!-- Mobile Menu Start -->
-    <div class="mobile-menu-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <div class="mobile-menu">
-                        <nav id="dropdown">
-                            <ul>
-                                <li><a href="/">HOME</a></li>
-                                <li><a href="shop.html">FEATURED</a></li>
-                                <li><a href="shop.html">REVIEW BOOK</a></li>
-                                <li><a href="about.html">ABOUT AUTHOR</a></li>
-                                <li><a href="#">pages</a>
-                                    <ul>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="cart.html">Cart Page</a></li>
-                                        <li><a href="checkout.html">Check Out</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="my-account.html">My Account</a></li>
-                                        <li><a href="shop.html">Shopping Page</a></li>
-                                        <li><a href="single-product.html">Single Shop Page</a></li>
-                                        <li><a href="wishlist.html">Wishlist Page</a></li>
-                                        <li><a href="404.html">404 Page</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">CONTACT</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Mobile Menu End -->
+        <!--Header Area End-->
+		<!-- Mobile Menu Start -->
+		<div class="mobile-menu-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<div class="mobile-menu">
+							<nav id="dropdown">
+								<ul>
+                                    <li><a href="/">HOME</a></li>
+                                  <li><a href="/type?id=comic">Truyện </a></li>
+                                  <li><a href="/type?id=book">Sách tham khảo </a></li>
+                                  <li><a href="/type?id=other">Sách khác </a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<!- Mobile Menu End -->  
     <!-- Breadcrumbs Area Start -->
     <div class="breadcrumbs-area">
         <div class="container">
@@ -314,27 +196,28 @@
                         </div>
                         <p><%= book.shortDesc %></p>
                         <div class="single-product-price">
-                            <h2>$49.66</h2>
+                            <h2>$<%=book.unitPrice%></h2>
                         </div>
                         <div class="product-attributes clearfix">
                             <span class="pull-left" id="quantity-wanted-p">
                                 <span class="dec qtybutton">-</span>
-                                <input type="text" value="1" class="cart-plus-minus-box">
+                                <input type="text" value="1" id="count-item" class="cart-plus-minus-box">
                                 <span class="inc qtybutton">+</span>
                             </span>
                             <span>
-                                <a class="cart-btn btn-default" href="cart.html">
+                                <a class="cart-btn btn-default" data-id="<%=book._id%>" href="javascript: void(0)"
+                                    onclick="addToCart(this)">
                                     <i class="flaticon-shop"></i>
                                     Add to cart
                                 </a>
                             </span>
                         </div>
-                        <div class="add-to-wishlist">
+                        <!-- <div class="add-to-wishlist">
                             <a class="wish-btn" href="cart.html">
                                 <i class="fa fa-heart-o"></i>
                                 ADD TO WISHLIST
                             </a>
-                        </div>
+                        </div> -->
                         <div class="single-product-categories">
                             <label>Categories:</label>
                             <span><%= book.typeId %></span>
@@ -594,6 +477,9 @@
     <script src="lib/home.js" type="text/javascript"></script>
     <!-- main js -->
     <script src="js/main.js"></script>
+    <!-- swal js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css">
     <script>
         let newList = new Array();
         let currentList = localStorage.getItem('listSeen');
@@ -614,6 +500,37 @@
         } else {
             newList.push(JSON.stringify(book))
             localStorage.setItem('listSeen', JSON.stringify(newList));
+        }
+
+        function addToCart(element) {
+            let id = $(element).attr("data-id");
+            let newList = new Array();
+            let currentList = localStorage.getItem('listCart');
+            currentList = JSON.parse(currentList)
+            let book = {
+                _id: '<%= book._id %>',
+                image: '<%= book.image %>',
+                name: '<%= book.name %>',
+                unitPrice: '<%= book.unitPrice %>',
+                count: $('#count-item').val()
+            }
+            let listId = [];
+            if (currentList != null) {
+                let listId = currentList.map(e => JSON.parse(e)._id);
+                if (listId.indexOf('<%= book._id %>') == -1) {
+                    currentList.push(JSON.stringify(book));
+                    localStorage.setItem('listCart', JSON.stringify(currentList));
+                }
+            } else {
+                newList.push(JSON.stringify(book))
+                localStorage.setItem('listCart', JSON.stringify(newList));
+            }
+            Swal.fire({
+                type: 'success',
+                title: 'Done',
+                text: 'You have add to cart completely'
+            })
+
         }
     </script>
     <!--Facebook SDK -->

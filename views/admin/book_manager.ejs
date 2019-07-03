@@ -76,35 +76,35 @@
                                 Menu
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
-                                    aria-controls="submenu-2"><i class="fa fa-fw fa-home"></i>Home</a>
+                                <a class="nav-link" href="/admin" aria-expanded="false" aria-controls="submenu-2"><i
+                                        class="fa fa-fw fa-home"></i>Home</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="https://google.vn" aria-expanded="false"
+                                <a class="nav-link " href="/admin/bill" aria-expanded="false"
                                     aria-controls="submenu-2"><i class="fa fa-fw fa-money-bill-alt"></i>Bill Manager</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="https://google.vn" aria-expanded="false"
+                                <a class="nav-link" href="/admin/customer" aria-expanded="false"
                                     aria-controls="submenu-2"><i class="fa fa-fw fa-user"></i>Customer Manager</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="https://google.vn" aria-expanded="false"
+                                <a class="nav-link active" href="/admin/book" aria-expanded="false"
                                     aria-controls="submenu-2"><i class="fa fa-fw fa-book"></i>Book Manager</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                <a class="nav-link" href="/admin/staff" aria-expanded="false"
                                     aria-controls="submenu-2"><i class="fa fa-fw fa-user-md"></i>Staff Manager</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
@@ -112,22 +112,21 @@
                             </li>
 
 
+
                             <li class="nav-item">
-                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                <a class="nav-link" href="/admin/report" aria-expanded="false"
                                     aria-controls="submenu-2"><i class="fa fa-fw fa-file"></i>Report</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                <a class="nav-link" href="/admin/setting" aria-expanded="false"
                                     aria-controls="submenu-2"><i class="fa fa-fw fa-cogs"></i>Setting</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
                                 </div>
                             </li>
-
-
                         </ul>
                     </div>
                 </nav>
@@ -149,9 +148,14 @@
                             <!-- ============================================================== -->
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="card">
-                                    <h5 class="card-header">Basic Form</h5>
+                                    <h5 class="card-header">Book Manager</h5>
                                     <div class="card-body">
                                         <form>
+                                            <div class="form-group">
+                                                <label for="inputText3" class="col-form-label">Book ID</label>
+                                                <input type="text" name="bookId" id="bookId" class="form-control"
+                                                    disabled>
+                                            </div>
                                             <div class="form-group">
                                                 <label for="inputText3" class="col-form-label">Type ID</label>
                                                 <input type="text" name="typeId" id="typeId" class="form-control"
@@ -206,11 +210,6 @@
                                                 type="submit">
                                                 <i class="fa fa-save"></i> SAVE
                                             </button>
-                                            <button class="btn btn-primary d-inline-block hide" id="book-edit"
-                                                type="submit">
-                                                <i class="fa fa-edit"></i> EDIT
-                                            </button>
-
                                         </form>
                                     </div>
 
@@ -330,10 +329,11 @@
         //Action implement
 
         function editBook(element) {
-            console.log($(element).attr("data-id"))
+
             let bookId = $(element).attr("data-id");
             $.get(`/admin/book/${bookId}`, {}, function (result) {
                 if (result.success === true) {
+                    $('#bookId').val(result.book._id)
                     $('#typeId').val(result.book.typeId)
                     $('#name').val(result.book.name)
                     $('#author').val(result.book.author)
@@ -356,7 +356,6 @@
         }
 
         function deleteBook(element) {
-            console.log($(element).attr("data-id"))
             Swal.fire({
                 title: 'Are you sure?',
                 text: "You won't be able to revert this!",
@@ -377,7 +376,6 @@
                                     title: 'Done',
                                     text: 'You have been delete completely'
                                 })
-                                console.log('post success')
                                 location.reload();
                             } else {
                                 Swal.fire({
@@ -396,10 +394,10 @@
         $(document).ready(function () {
             $('#book-submit').click(function (e) {
                 e.preventDefault();
-                let bookId;
+                let bookId = $('#bookId').val();
                 if (bookId) {
                     $.post('/admin/book/update', {
-                        bookId: $('#typeId').val(),
+                        bookId: $('#bookId').val(),
                         name: $('#name').val(),
                         author: $('#author').val(),
                         numberOf: $('#numberOf').val(),
@@ -422,7 +420,7 @@
                             Swal.fire({
                                 type: 'success',
                                 title: 'Done',
-                                text: 'You have been add completely'
+                                text: 'You have been update completely'
                             })
                             location.reload();
 

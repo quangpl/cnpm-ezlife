@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const BookSchema = require('../schemas/book');
 let Book = mongoose.model("Book", BookSchema);
-
+let Setting = require('./setting');
 Book.add = async ({
     typeId,
     name,
@@ -95,7 +95,8 @@ Book.getByCategory = async (category) => {
 
 Book.getPriceToSale = async (id) => {
     let book = await Book.find({}).exec();
-    return book.unitPrice * 1.05; //todo : get parameter from setting db
+    let ratio = await Book.getByNameId('ratio_price') || 1.05;
+    return book.unitPrice * ratio; //todo : get parameter from setting db
 };
 
 Book.isValid = async ({

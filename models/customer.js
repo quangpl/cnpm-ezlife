@@ -78,6 +78,18 @@ Customer.update = async ({
         }).exec();
 };
 
+Customer.updateDebt = async ({
+    id,
+    debtMoney
+}) => {
+
+    return await Customer.updateOne({
+        _id: mongoose.Types.ObjectId(id)
+    }, {
+            debtMoney: debtMoney
+        }).exec();
+};
+
 Customer.delete = async (id) => {
     return await Customer.deleteOne({
         _id: id

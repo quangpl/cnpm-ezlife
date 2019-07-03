@@ -18,8 +18,15 @@ router.get('/bill', async function (req, res, next) {
     res.render('admin/bill_manager', { bills: bills });
 });
 
+router.get('/bill/:id', async function (req, res, next) {
+    let bill = await Bill.getById(req.params.id);
+    res.json({
+        bill: bill
+    })
+    return;
+});
+
 router.post('/bill', async function (req, res, next) {
-    console.log(req.body);
     try {
         let newBill = await Bill.add({
             customerId: req.body.customerId,
@@ -59,17 +66,21 @@ router.get('/customer', async function (req, res, next) {
     res.render('admin/customer_manager', { customers: customers });
 });
 
-router.post('/customer', async function (req, res, next) {
-    console.log(req.body);
-    try {
-        let newCustomer = await Customer.add({
-            name: req.body.name,
-            phone: req.body.phone,
-            address: req.body.address,
-            email: req.body.email,
-            debtMoney: req.body.debtMoney,
-        });
+router.get('/customer/:id', async function (req, res, next) {
+    let customer = await Customer.getById(req.params.id);
 
+    res.json({
+        customer: customer
+    })
+    return;
+});
+
+router.post('/customer/debt', async function (req, res, next) {
+    try {
+        await Customer.updateDebt({
+            id: req.body.customerId,
+            debtMoney: req.body.debtMoney
+        })
         res.json({
             success: true
         })
@@ -189,16 +200,15 @@ router.get('/staff', async function (req, res, next) {
 });
 
 router.post('/staff', async function (req, res, next) {
-    console.log(req.body);
     try {
         let newStaff = await Staff.add({
-            type: req.body.type,
-            name: req.body.name,
+            username: req.body.username,
+            password: req.body.password,
+            fullName: req.body.fullName,
             phone: req.body.phone,
             address: req.body.address,
-            employedTime: req.body.employedTime,
+            employedTime: req.body.employedTime
         });
-
         res.json({
             success: true
         })
@@ -225,49 +235,29 @@ router.post('/staff/delete', async function (req, res, next) {
 });
 
 router.get('/report', async function (req, res, next) {
-    let amountReports = await AmountReport.getAll();
-    let debtReports = await DebtReport.getAll();
+    let books = await Book.getAll();
+    let customers = await Customer.getAll();
+    let bills = await Bill.getAll();
+    let sumValue = bills.map(e => {
+        return e.value;
+    }).reduce((a, b) => a + b)
+    let sumDebt = customers.map(e => {
+        return e.debtMoney;
+    }).reduce((a, b) => a + b)
 
+    // let sumValue = arrValue
     res.render('admin/report', {
-        amountReports: amountReports,
-        debtReports: debtReports
+        sum: {
+            book: books.length,
+            customer: customers.length,
+            bill: bills.length,
+            value: sumValue,
+            debt: sumDebt
+        },
+        bills: bills
     });
 });
 
-router.post('/report', async function (req, res, next) {
-    console.log(req.body);
-    try {
-        let newAmountReport = await AmountReport.add({
-            bookId: req.body.bookId,
-            time: req.body.time,
-            firstAmount: req.body.firstAmount,
-            lastAmount: req.body.lastAmount
-        });
-
-        res.json({
-            success: true
-        })
-    } catch (e) {
-        res.json({
-            success: false,
-            error: e
-        })
-    }
-});
-
-router.post('/report/delete', async function (req, res, next) {
-    try {
-        await AmountReport.delete(req.body.amountReportId)
-        res.json({
-            success: true
-        })
-    } catch (e) {
-        res.json({
-            success: false,
-            error: e
-        })
-    }
-});
 
 router.get('/setting', async function (req, res, next) {
     let settings = await Setting.getAll();
@@ -276,15 +266,16 @@ router.get('/setting', async function (req, res, next) {
 });
 
 router.post('/setting', async function (req, res, next) {
-    console.log(req.body);
     try {
-        let newSetting = await Setting.add({
-            description: req.body.description,
+        let setting = await Setting.add({
+            nameId: req.body.nameId,
             value: req.body.value,
         });
+        console.log(req.body.nameId)
 
         res.json({
-            success: true
+            success: true,
+            setting :setting
         })
     } catch (e) {
         res.json({
@@ -297,6 +288,24 @@ router.post('/setting', async function (req, res, next) {
 router.post('/setting/delete', async function (req, res, next) {
     try {
         await Setting.delete(req.body.settingId)
+        res.json({
+            success: true
+        })
+    } catch (e) {
+        res.json({
+            success: false,
+            error: e
+        })
+    }
+});
+
+router.post('/setting/update', async function (req, res, next) {
+    try {
+        await Setting.update({
+            id: req.body.settingId,
+            nameId: req.body.nameId,
+            value: req.body.value
+        })
         res.json({
             success: true
         })

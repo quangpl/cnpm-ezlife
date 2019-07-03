@@ -82,35 +82,35 @@
                                 Menu
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
-                                    aria-controls="submenu-2"><i class="fa fa-fw fa-home"></i>Home</a>
+                                <a class="nav-link" href="/admin" aria-expanded="false" aria-controls="submenu-2"><i
+                                        class="fa fa-fw fa-home"></i>Home</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="https://google.vn" aria-expanded="false"
+                                <a class="nav-link " href="/admin/bill" aria-expanded="false"
                                     aria-controls="submenu-2"><i class="fa fa-fw fa-money-bill-alt"></i>Bill Manager</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="https://google.vn" aria-expanded="false"
+                                <a class="nav-link active" href="/admin/customer" aria-expanded="false"
                                     aria-controls="submenu-2"><i class="fa fa-fw fa-user"></i>Customer Manager</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                <a class="nav-link" href="/admin/book" aria-expanded="false"
                                     aria-controls="submenu-2"><i class="fa fa-fw fa-book"></i>Book Manager</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                <a class="nav-link" href="/admin/staff" aria-expanded="false"
                                     aria-controls="submenu-2"><i class="fa fa-fw fa-user-md"></i>Staff Manager</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
@@ -120,21 +120,19 @@
 
 
                             <li class="nav-item">
-                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                <a class="nav-link" href="/admin/report" aria-expanded="false"
                                     aria-controls="submenu-2"><i class="fa fa-fw fa-file"></i>Report</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                <a class="nav-link" href="/admin/setting" aria-expanded="false"
                                     aria-controls="submenu-2"><i class="fa fa-fw fa-cogs"></i>Setting</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
                                 </div>
                             </li>
-
-
                         </ul>
                     </div>
                 </nav>
@@ -156,39 +154,42 @@
                             <!-- ============================================================== -->
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="card">
-                                    <h5 class="card-header">Basic Form</h5>
+                                    <h5 class="card-header">Customer Manager</h5>
                                     <div class="card-body">
                                         <form>
                                             <div class="form-group">
-                                                <label for="inputText3" class="col-form-label">ID</label>
+                                                <label for="inputText4" class="col-form-label">Customer Name</label>
                                                 <input id="customerId" name="customerId" type="text"
-                                                    class="form-control">
+                                                    class="form-control" disabled>
                                             </div>
-
                                             <div class="form-group">
                                                 <label for="inputText4" class="col-form-label">Customer Name</label>
                                                 <input id="customerName" name="customerName" type="text"
-                                                    class="form-control">
+                                                    class="form-control" disabled>
                                             </div>
                                             <div class="form-group">
                                                 <label for="inputText5">Phone</label>
-                                                <input id="phone" name="phone" type="text" class="form-control">
+                                                <input id="phone" name="phone" type="text" class="form-control"
+                                                    disabled>
                                             </div>
                                             <div class="form-group">
                                                 <label for="inputText6">Address</label>
-                                                <input id="address" name="address" type="text" class="form-control">
+                                                <input id="address" name="address" type="text" class="form-control"
+                                                    disabled>
                                             </div>
                                             <div class="form-group">
                                                 <label for="inputEmail">Email address</label>
                                                 <input id="email" name="email" type="email"
-                                                    placeholder="name@example.com" class="form-control">
+                                                    placeholder="name@example.com" class="form-control" disabled>
                                             </div>
                                             <div class="form-group">
                                                 <label for="inputText7">Dept</label>
-                                                <input id="dept" name="dept" type="number" class="form-control">
+                                                <input id="debtMoney" name="debtMoney" type="number"
+                                                    class="form-control" required>
                                             </div>
                                         </form>
-                                        <button class="btn btn-primary d-inline-block" type="submit">Submit</button>
+                                        <button class="btn btn-primary d-inline-block" id="btn-customer"
+                                            type="submit">Submit</button>
                                     </div>
 
                                 </div>
@@ -211,22 +212,20 @@
                                                         <th class="border-0">Address</th>
                                                         <th class="border-0">Email address</th>
                                                         <th class="border-0">Dept</th>
+                                                        <th class="border-0">Edit</th>
+                                                        <th class="border-0">Delete</th>
+
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <% customers.forEach((e)=>{ %>
                                                     <tr>
                                                         <td><%= e._id %></td>
-                                                        <td>
-                                                            <div class="m-r-10"><img src="<%= e.image %>" alt="user"
-                                                                    class="rounded" width="45">
-                                                            </div>
-                                                        </td>
-                                                        <td><%= e.customerName %></td>
+                                                        <td><%= e.name %></td>
                                                         <td><%= e.phone %></td>
                                                         <td><%= e.address %></td>
-                                                        <td><%= e.emailAddress %></td>
-                                                        <td><%= e.dept %></td>
+                                                        <td><%= e.email %></td>
+                                                        <td><%= e.debtMoney %></td>
                                                         <td><i data-id="<%= e._id %>" onclick="editCustomer(this)"
                                                                 class="fa fa-edit button-edit"></i></td>
                                                         <td><i data-id="<%= e._id %>" onclick="deleteCustomer(this)"
@@ -301,6 +300,53 @@
 </html>
 
 <script>
+    $("#btn-customer").click(function (e) {
+        e.preventDefault();
+        $.post(`/admin/customer/debt`, {
+            customerId: $('#customerId').val(),
+            debtMoney: $('#debtMoney').val()
+        }, function (result) {
+            if (result.success == true) {
+                Swal.fire({
+                    type: 'success',
+                    title: 'Done',
+                    text: 'You have been update completely'
+                })
+                location.reload();
+
+            } else {
+                Swal.fire({
+                    type: 'error',
+                    title: 'Error',
+                    text: 'Something went wrong'
+                })
+            }
+
+        });
+    });
+
+    function editCustomer(element) {
+        let customerID = $(element).attr("data-id");
+        $.get(`/admin/customer/${customerID}`, function (result) {
+            if (result) {
+                $('#customerId').val(result.customer._id);
+                $('#customerName').val(result.customer.name);
+                $('#phone').val(result.customer.phone);
+                $('#address').val(result.customer.address);
+                $('#email').val(result.customer.email);
+                $('#debtMoney').val(result.customer.debtMoney);
+
+            } else {
+                Swal.fire({
+                    type: 'error',
+                    title: 'Error',
+                    text: 'Something went wrong'
+                })
+            }
+
+        });
+    }
+
     function deleteCustomer(element) {
         Swal.fire({
             title: 'Are you sure?',
@@ -323,7 +369,6 @@
                                 title: 'Done',
                                 text: 'You have been delete completely'
                             })
-                            console.log('post success')
                             location.reload();
                         } else {
                             Swal.fire({

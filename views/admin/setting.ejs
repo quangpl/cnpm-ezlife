@@ -82,35 +82,35 @@
                                 Menu
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
-                                    aria-controls="submenu-2"><i class="fa fa-fw fa-home"></i>Home</a>
+                                <a class="nav-link" href="/admin" aria-expanded="false" aria-controls="submenu-2"><i
+                                        class="fa fa-fw fa-home"></i>Home</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                <a class="nav-link " href="/admin/bill" aria-expanded="false"
                                     aria-controls="submenu-2"><i class="fa fa-fw fa-money-bill-alt"></i>Bill Manager</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="https://google.vn" aria-expanded="false"
+                                <a class="nav-link" href="/admin/customer" aria-expanded="false"
                                     aria-controls="submenu-2"><i class="fa fa-fw fa-user"></i>Customer Manager</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                <a class="nav-link" href="/admin/book" aria-expanded="false"
                                     aria-controls="submenu-2"><i class="fa fa-fw fa-book"></i>Book Manager</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                <a class="nav-link" href="/admin/staff" aria-expanded="false"
                                     aria-controls="submenu-2"><i class="fa fa-fw fa-user-md"></i>Staff Manager</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
@@ -120,21 +120,19 @@
 
 
                             <li class="nav-item">
-                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                <a class="nav-link" href="/admin/report" aria-expanded="false"
                                     aria-controls="submenu-2"><i class="fa fa-fw fa-file"></i>Report</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="https://google.vn" aria-expanded="false"
+                                <a class="nav-link ative" href="/admin/setting" aria-expanded="false"
                                     aria-controls="submenu-2"><i class="fa fa-fw fa-cogs"></i>Setting</a>
                                 <div id="submenu-2" class="collapse submenu" style="">
 
                                 </div>
                             </li>
-
-
                         </ul>
                     </div>
                 </nav>
@@ -161,39 +159,21 @@
                                         <form>
                                             <div class="form-group">
                                                 <label for="inputText3" class="col-form-label">ID</label>
-                                                <input id="inputText3" type="text" class="form-control">
+                                                <input id="settingId" type="text" class="form-control" disabled>
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputEmail">Description</label>
-                                                <input id="inputEmail" type="email" class="form-control">
-                                                <p>We'll never share your email with anyone else.</p>
+                                                <label for="inputEmail">NameID</label>
+                                                <input id="nameId" type="text" class="form-control">
                                             </div>
                                             <div class="form-group">
                                                 <label for="inputText4" class="col-form-label">Value</label>
-                                                <input id="inputText4" type="number" class="form-control"
-                                                    placeholder="Numbers">
+                                                <input id="value" type="number" class="form-control">
                                             </div>
-                                            <div class="form-group">
-                                                <label for="inputPassword">Password</label>
-                                                <input id="inputPassword" type="password" placeholder="Password"
-                                                    class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="inputPassword">Password</label>
-                                                <input id="inputPassword" type="password" placeholder="Password"
-                                                    class="form-control">
-                                            </div>
-                                            <div class="custom-file mb-3">
-                                                <input type="file" class="custom-file-input" id="customFile">
-                                                <label class="custom-file-label" for="customFile">File Input</label>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleFormControlTextarea1">Example textarea</label>
-                                                <textarea class="form-control" id="exampleFormControlTextarea1"
-                                                    rows="3"></textarea>
-                                            </div>
+
+
                                         </form>
-                                        <button class="btn btn-primary d-inline-block" type="submit">Submit</button>
+                                        <button class="btn btn-primary d-inline-block" id="btn-setting"
+                                            type="submit">Submit</button>
                                     </div>
 
                                 </div>
@@ -211,8 +191,11 @@
                                                 <thead class="bg-light">
                                                     <tr class="border-0">
                                                         <th class="border-0">ID</th>
-                                                        <th class="border-0">Description</th>
+                                                        <th class="border-0">NameID</th>
                                                         <th class="border-0">Value</th>
+                                                        <th class="border-0">Edit</th>
+                                                        <th class="border-0">Delete</th>
+
 
                                                     </tr>
                                                 </thead>
@@ -220,12 +203,7 @@
                                                     <% settings.forEach((e)=>{ %>
                                                     <tr>
                                                         <td><%= e._id %></td>
-                                                        <td>
-                                                            <div class="m-r-10"><img src="<%= e.image %>" alt="user"
-                                                                    class="rounded" width="45">
-                                                            </div>
-                                                        </td>
-                                                        <td><%= e.description %></td>
+                                                        <td><%= e.nameId %></td>
                                                         <td><%= e.value %></td>
                                                         <td><i data-id="<%= e._id %>" onclick="editSetting(this)"
                                                                 class="fa fa-edit button-edit"></i></td>
@@ -338,4 +316,64 @@
             }
         })
     }
+
+    $(document).ready(function () {
+        $('#btn-setting').click(function (e) {
+            e.preventDefault();
+            let id = $('#settingId').val();
+            if (id) {
+                $.post('/admin/setting/update', {
+                    settingId: $('#bookId').val(),
+                    nameId: $('#nameId').val(),
+                    value: $('#value').val(),
+                }, function (result) {
+                    if (result.success === true) {
+                        $('#settingId').val('');
+                        $('#nameId').val('');
+                        $('#value').val('');
+                        Swal.fire({
+                            type: 'success',
+                            title: 'Done',
+                            text: 'You have been update completely'
+                        })
+                        location.reload();
+
+                    } else {
+                        Swal.fire({
+                            type: 'error',
+                            title: 'Error',
+                            text: 'Your input is not valid'
+                        })
+                    }
+
+                });
+            } else {
+                $.post('/admin/setting', {
+                    nameId: $('#nameId').val()||123,
+                    value: $('#value').val()||123,
+                }, function (result) {
+                    console.log(result)
+                    if (result.success === true) {
+                        $('#nameId').val('');
+                        $('#value').val('');
+                        Swal.fire({
+                            type: 'success',
+                            title: 'Done',
+                            text: 'You have been add completely'
+                        })
+                        location.reload();
+
+                    } else {
+                        Swal.fire({
+                            type: 'error',
+                            title: 'Error',
+                            text: 'Your input is not valid'
+                        })
+                    }
+
+                });
+            }
+
+        });
+    });
 </script>

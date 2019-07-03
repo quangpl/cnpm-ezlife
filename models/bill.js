@@ -4,10 +4,10 @@ let Bill = mongoose.model("Bill", BillSchema);
 let Book = require('./book');
 
 Bill.add = async ({
-                      customerId,
-                      employeeId,
-                      books
-                  }) => {
+    customerId,
+    employeeId,
+    books
+}) => {
     let value = await Bill.getValue(books);
     let newBill = new Bill({
         customerId: customerId,
@@ -21,21 +21,21 @@ Bill.add = async ({
 };
 
 Bill.update = async ({
-                         id,
-                         customerId,
-                         employeeId,
-                         books
-                     }) => {
+    id,
+    customerId,
+    employeeId,
+    books
+}) => {
 
     let value = await Bill.getValue(books);
     return await Book.updateOne({
         _id: id
     }, {
-        customerId: customerId,
-        employeeId: employeeId,
-        books: books,
-        value: value
-    }).exec();
+            customerId: customerId,
+            employeeId: employeeId,
+            books: books,
+            value: value
+        }).exec();
 };
 
 Bill.delete = async (id) => {
@@ -46,7 +46,7 @@ Bill.delete = async (id) => {
 
 Bill.getById = async (id) => {
     return await Bill.findOne({
-        _id: id
+        _id: mongoose.Types.ObjectId(id)
     }).exec();
 };
 

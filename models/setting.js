@@ -3,12 +3,12 @@ const SettingSchema = require('../schemas/setting');
 let Setting = mongoose.model("Setting", SettingSchema);
 
 Setting.add = async ({
-                          description,
-                          value
-                     }) => {
+    nameId,
+    value
+}) => {
 
-    let newSetting = new Setting ({
-        description: description,
+    let newSetting = new Setting({
+        nameId: nameId,
         value: value
     });
 
@@ -17,33 +17,39 @@ Setting.add = async ({
 };
 
 Setting.update = async ({
-                             id,
-                             description,
-                             value
-                        }) => {
-    
+    id,
+    nameId,
+    value
+}) => {
+
     return await Setting.updateOne({
-        _id: id
+        _id: mongoose.Types.ObjectId(id)
     }, {
-        description: description,
-        value: value
-    }).exec();
+            nameId: nameId,
+            value: value
+        }).exec();
 };
 
 Setting.delete = async (id) => {
     return await Setting.deleteOne({
-        _id: id
+        _id: mongoose.Types.ObjectId(id)
     }).exec();
 };
 
 Setting.getById = async (id) => {
     return await Setting.findOne({
-        _id: id
+        _id: mongoose.Types.ObjectId(id)
     }).exec();
 }
 
 Setting.getAll = async () => {
     return await Setting.find({}).exec();
 };
+
+Setting.getByNameId = async (id) => {
+    return await Setting.findOne({
+        _id: mongoose.Types.ObjectId(id)
+    }).exec();
+}
 
 module.exports = Setting;
