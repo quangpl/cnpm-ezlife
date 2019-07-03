@@ -66,17 +66,21 @@ router.get('/customer', async function (req, res, next) {
     res.render('admin/customer_manager', { customers: customers });
 });
 
-router.post('/customer', async function (req, res, next) {
-    console.log(req.body);
-    try {
-        let newCustomer = await Customer.add({
-            name: req.body.name,
-            phone: req.body.phone,
-            address: req.body.address,
-            email: req.body.email,
-            debtMoney: req.body.debtMoney,
-        });
+router.get('/customer/:id', async function (req, res, next) {
+    let customer = await Customer.getById(req.params.id);
 
+    res.json({
+        customer: customer
+    })
+    return;
+});
+
+router.post('/customer/debt', async function (req, res, next) {
+    try {
+        await Customer.updateDebt({
+            id: req.body.customerId,
+            debtMoney: req.body.debtMoney
+        })
         res.json({
             success: true
         })
