@@ -7,13 +7,19 @@ const CustomerSchema = new Schema({
         type: String,
         required: true
     },
+    password: {
+        type: String,
+        required: true
+    },
     phone: {
         type: Number,
-        required: true
+        required: true,
+        default: 0
     },
     address: {
         type: String,
-        required: true
+        required: true,
+        default: ' '
     },
     email: {
         type: String,
@@ -21,11 +27,12 @@ const CustomerSchema = new Schema({
     },
     debtMoney: {
         type: Number,
-        required: true
+        required: true,
+        default: 0
     },
 }, {
-    timestamps: true,
-    versionKey: false
-});
+        timestamps: true,
+        versionKey: false
+    });
 
 module.exports = CustomerSchema;

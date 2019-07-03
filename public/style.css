@@ -2971,9 +2971,29 @@ h3.widget-title-modal {
     font-size: 16px;
 }
 
+/*.book-price {*/
+/*    font-size: 14px;*/
+/*    color: rgb(120, 120, 120);*/
+/*    background : #32B5F3;*/
+/*    flex-wrap: wrap;*/
+/*}*/
 .book-price {
-    font-size: 14px;
-    color: rgb(120, 120, 120);
+    width: 30%;
+    height: 24px;
+    margin-bottom:-10px;
+    margin-top:3px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 15px 15px 0 0;
+    background-color: #32b5f3;
+    border-left: 1px solid #979797;
+    color: white;
+    font-weight: 300;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    padding:3px;
+    position: relative;
+    bottom: 0px;
 }
 
 .img-book-mini {
