@@ -12,323 +12,332 @@
     <link rel="stylesheet" href="/assets_admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
     <link rel="stylesheet" href="/assets_admin/vendor/charts/chartist-bundle/chartist.css">
     <link rel="stylesheet" href="/assets_admin/vendor/charts/morris-bundle/morris.css">
-    <link rel="stylesheet" href="/assets_admin/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <link rel="stylesheet"
+        href="/assets_admin/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/assets_admin/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="/assets_admin/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <title>Quản trị nhà sách | EZLIFE </title>
 </head>
 
 <body>
-<!-- ============================================================== -->
-<!-- main wrapper -->
-<!-- ============================================================== -->
-<div class="dashboard-main-wrapper">
     <!-- ============================================================== -->
-    <!-- navbar -->
+    <!-- main wrapper -->
     <!-- ============================================================== -->
-    <div class="dashboard-header">
-        <nav class="navbar navbar-expand-lg bg-white fixed-top">
-            <a class="navbar-brand" href="index.html">EZLIFE</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto navbar-right-top">
-                    <li class="nav-item">
-                        <div id="custom-search" class="top-search-bar">
-                            <input class="form-control" type="text" placeholder="Search..">
-                        </div>
-                    </li>
-
-                    <li class="nav-item dropdown nav-user">
-                        <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false"><img src="/assets_admin/images/avatar-1.jpg" alt=""
-                                                                           class="user-avatar-md rounded-circle"></a>
-                        <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
-                             aria-labelledby="navbarDropdownMenuLink2">
-                            <div class="nav-user-info">
-                                <h5 class="mb-0 text-white nav-user-name">Your name </h5>
-                                <span class="status"></span><span class="ml-2">Admin</span>
-                            </div>
-                            <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Change password</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <!-- ============================================================== -->
-    <!-- end navbar -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- left sidebar -->
-    <!-- ============================================================== -->
-    <div class="nav-left-sidebar sidebar-dark">
-        <div class="menu-list">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="d-xl-none d-lg-none" href="#">Quản lý chung</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="dashboard-main-wrapper">
+        <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="index.html">EZLIFE</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav flex-column">
-                        <li class="nav-divider">
-                            Menu
-                        </li>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
                         <li class="nav-item">
-                            <a class="nav-link" href="https://google.vn" aria-expanded="false"
-                               aria-controls="submenu-2"><i class="fa fa-fw fa-home"></i>Home</a>
-                            <div id="submenu-2" class="collapse submenu" style="">
-
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://google.vn" aria-expanded="false"
-                               aria-controls="submenu-2"><i class="fa fa-fw fa-money-bill-alt"></i>Bill Manager</a>
-                            <div id="submenu-2" class="collapse submenu" style="">
-
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="https://google.vn" aria-expanded="false"
-                               aria-controls="submenu-2"><i class="fa fa-fw fa-user"></i>Customer Manager</a>
-                            <div id="submenu-2" class="collapse submenu" style="">
-
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://google.vn" aria-expanded="false"
-                               aria-controls="submenu-2"><i class="fa fa-fw fa-book"></i>Book Manager</a>
-                            <div id="submenu-2" class="collapse submenu" style="">
-
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://google.vn" aria-expanded="false"
-                               aria-controls="submenu-2"><i class="fa fa-fw fa-user-md"></i>Staff Manager</a>
-                            <div id="submenu-2" class="collapse submenu" style="">
-
+                            <div id="custom-search" class="top-search-bar">
+                                <input class="form-control" type="text" placeholder="Search..">
                             </div>
                         </li>
 
-
-
-                        <li class="nav-item">
-                            <a class="nav-link active" href="https://google.vn" aria-expanded="false"
-                               aria-controls="submenu-2"><i class="fa fa-fw fa-file"></i>Report</a>
-                            <div id="submenu-2" class="collapse submenu" style="">
-
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
+                                    src="/assets_admin/images/avatar-1.jpg" alt=""
+                                    class="user-avatar-md rounded-circle"></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
+                                aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-white nav-user-name">Your name </h5>
+                                    <span class="status"></span><span class="ml-2">Admin</span>
+                                </div>
+                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Change password</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://google.vn" aria-expanded="false"
-                               aria-controls="submenu-2"><i class="fa fa-fw fa-cogs"></i>Setting</a>
-                            <div id="submenu-2" class="collapse submenu" style="">
-
-                            </div>
-                        </li>
-
-
                     </ul>
                 </div>
             </nav>
         </div>
-    </div>
-    <!-- ============================================================== -->
-    <!-- end left sidebar -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- wrapper  -->
-    <!-- ============================================================== -->
-    <div class="dashboard-wrapper">
-        <div class="dashboard-ecommerce">
-            <div class="container-fluid dashboard-content ">
-                <div class="ecommerce-widget">
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Quản lý chung</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                    aria-controls="submenu-2"><i class="fa fa-fw fa-home"></i>Home</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
+
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                    aria-controls="submenu-2"><i class="fa fa-fw fa-money-bill-alt"></i>Bill Manager</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
+
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="https://google.vn" aria-expanded="false"
+                                    aria-controls="submenu-2"><i class="fa fa-fw fa-user"></i>Customer Manager</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
+
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                    aria-controls="submenu-2"><i class="fa fa-fw fa-book"></i>Book Manager</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
+
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                    aria-controls="submenu-2"><i class="fa fa-fw fa-user-md"></i>Staff Manager</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
+
+                                </div>
+                            </li>
 
 
+
+                            <li class="nav-item">
+                                <a class="nav-link active" href="https://google.vn" aria-expanded="false"
+                                    aria-controls="submenu-2"><i class="fa fa-fw fa-file"></i>Report</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
+
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                    aria-controls="submenu-2"><i class="fa fa-fw fa-cogs"></i>Setting</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
+
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-ecommerce">
+                <div class="container-fluid dashboard-content ">
+                    <div class="ecommerce-widget">
+
+
+                        <div class="row">
+                            <!-- ============================================================== -->
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Select period to report</h5>
+                                    <div class="card-body">
+                                        <h5>From</h5>
+                                        <div class="form-group">
+                                            <div class="input-group date" id="datetimepicker4"
+                                                data-target-input="nearest">
+                                                <input type="text" class="form-control datetimepicker-input"
+                                                    data-target="#datetimepicker4" />
+                                                <div class="input-group-append" data-target="#datetimepicker4"
+                                                    data-toggle="datetimepicker">
+                                                    <div class="input-group-text"><i class="far fa-calendar-alt"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h5>To</h5>
+                                        <div class="form-group">
+                                            <div class="input-group date" id="datetimepicker4"
+                                                data-target-input="nearest">
+                                                <input type="text" class="form-control datetimepicker-input"
+                                                    data-target="#datetimepicker4" />
+                                                <div class="input-group-append" data-target="#datetimepicker4"
+                                                    data-toggle="datetimepicker">
+                                                    <div class="input-group-text"><i class="far fa-calendar-alt"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary">Print Report</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Summary</h5>
+                                    <div class="card-body">
+                                        <h5><i class="fas fa-check mr-2"></i><b class="mr-2">Maximum:</b> 123 </h5>
+                                        <h5><i class="fas fa-times mr-2"></i><b class="mr-2">Minimum:</b> 23 </h5>
+                                        <h5><i class="fas fa-calculator mr-2"></i><b class="mr-2">Average:</b> 73</h5>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- ============================================================== -->
+
+                            <!-- recent orders  -->
+                            <!-- ============================================================== -->
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Recent Orders</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Book ID</th>
+                                                        <th class="border-0">Time</th>
+                                                        <th class="border-0">First amount</th>
+                                                        <th class="border-0">Last Amount</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    <% amountReports.forEach((e)=>{ %>
+                                                    <tr>
+                                                        <td><%= e._id %></td>
+                                                        <td>
+                                                            <div class="m-r-10"><img src="<%= e.image %>" alt="user"
+                                                                    class="rounded" width="45">
+                                                            </div>
+                                                        </td>
+                                                        <td><%= e.bookId %></td>
+                                                        <td><%= e.time %></td>
+                                                        <td><%= e.firstAmount %></td>
+                                                        <td><%= e.lastAmount %></td>
+                                                        <td><i data-id="<%= e._id %>" onclick="editBook(this)"
+                                                                class="fa fa-edit button-edit"></i></td>
+                                                        <td><i data-id="<%= e._id %>" onclick="deleteBook(this)"
+                                                                class="fa fa-trash button-delete"></i>
+                                                        </td>
+
+                                                    </tr>
+                                                    <% }) %>
+
+                                                    <% debtReports.forEach((e)=>{ %>
+                                                    <tr>
+                                                        <td><%= e._id %></td>
+                                                        <td>
+                                                            <div class="m-r-10"><img src="<%= e.image %>" alt="user"
+                                                                    class="rounded" width="45">
+                                                            </div>
+                                                        </td>
+                                                        <td><%= e.customerId %></td>
+                                                        <td><%= e.time %></td>
+                                                        <td><%= e.firstDebt %></td>
+                                                        <td><%= e.lastDebt %></td>
+                                                        <td><i data-id="<%= e._id %>" onclick="editBook(this)"
+                                                                class="fa fa-edit button-edit"></i></td>
+                                                        <td><i data-id="<%= e._id %>" onclick="deleteBook(this)"
+                                                                class="fa fa-trash button-delete"></i>
+                                                        </td>
+
+                                                    </tr>
+                                                    <% }) %>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Bar Charts</h5>
+                                    <div class="card-body">
+                                        <canvas id="chartjs_bar"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ============================================================== -->
+                            <!-- end recent orders  -->
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <div class="footer">
+                <div class="container-fluid">
                     <div class="row">
-                        <!-- ============================================================== -->
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="card">
-                                <h5 class="card-header">Select period to report</h5>
-                                <div class="card-body">
-                                    <h5>From</h5>
-                                    <div class="form-group">
-                                        <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
-                                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" />
-                                            <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
-                                                <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <h5>To</h5>
-                                    <div class="form-group">
-                                        <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
-                                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" />
-                                            <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
-                                                <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-primary">Print Report</button>
-                                </div>
-
-                            </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            Copyright © 2019 <b>EZLIFE</b>. All rights reserved. Base on <b>Colorlib</b>
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="card">
-                                <h5 class="card-header">Summary</h5>
-                                <div class="card-body">
-                                    <h5><i class="fas fa-check mr-2"></i><b class="mr-2">Maximum:</b>   123 </h5>
-                                    <h5><i class="fas fa-times mr-2"></i><b class="mr-2">Minimum:</b>   23 </h5>
-                                    <h5><i class="fas fa-calculator mr-2"></i><b class="mr-2">Average:</b>   73</h5>
-
-                                </div>
-
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="text-md-right footer-links d-none d-sm-block">
+                                <a href="javascript: void(0);">About</a>
                             </div>
-                        </div>
-
-                        <!-- ============================================================== -->
-
-                        <!-- recent orders  -->
-                        <!-- ============================================================== -->
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="card">
-                                <h5 class="card-header">Recent Orders</h5>
-                                <div class="card-body p-0">
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <thead class="bg-light">
-                                            <tr class="border-0">
-                                                <th class="border-0">Book ID</th>
-                                                <th class="border-0">Time</th>
-                                                <th class="border-0">First amount</th>
-                                                <th class="border-0">Last Amount</th>
-                                               
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>
-                                                    <div class="m-r-10"><img src="/assets_admin/images/product-pic.jpg"
-                                                                             alt="user" class="rounded" width="45">
-                                                    </div>
-                                                </td>
-                                                <td>Product #1</td>
-                                                <td>id000001</td>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>
-                                                    <div class="m-r-10"><img src="/assets_admin/images/product-pic-2.jpg"
-                                                                             alt="user" class="rounded" width="45">
-                                                    </div>
-                                                </td>
-                                                <td>Product #2</td>
-                                                <td>id000002</td>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>
-                                                    <div class="m-r-10"><img src="/assets_admin/images/product-pic-3.jpg"
-                                                                             alt="user" class="rounded" width="45">
-                                                    </div>
-                                                </td>
-                                                <td>Product #3</td>
-                                                <td>id000003</td>
-                                               
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>
-                                                    <div class="m-r-10"><img src="/assets_admin/images/product-pic-4.jpg"
-                                                                             alt="user" class="rounded" width="45">
-                                                    </div>
-                                                </td>
-                                                <td>Product #4</td>
-                                                <td>id000004</td>
-                                              
-                                            </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="card">
-                                <h5 class="card-header">Bar Charts</h5>
-                                <div class="card-body">
-                                    <canvas id="chartjs_bar"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ============================================================== -->
-                        <!-- end recent orders  -->
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- footer -->
-        <!-- ============================================================== -->
-        <div class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                        Copyright © 2019 <b>EZLIFE</b>. All rights reserved. Base on <b>Colorlib</b>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                        <div class="text-md-right footer-links d-none d-sm-block">
-                            <a href="javascript: void(0);">About</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
-        <!-- end footer -->
+        <!-- end wrapper  -->
         <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
-    <!-- end wrapper  -->
+    <!-- end main wrapper  -->
     <!-- ============================================================== -->
-</div>
-<!-- ============================================================== -->
-<!-- end main wrapper  -->
-<!-- ============================================================== -->
-<!-- Optional JavaScript -->
-<!-- jquery 3.3.1 -->
-<script src="/assets_admin/vendor/jquery/jquery-3.3.1.min.js"></script>
-<!-- bootstap bundle js -->
-<script src="/assets_admin/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-<!-- slimscroll js -->
-<script src="/assets_admin/vendor/slimscroll/jquery.slimscroll.js"></script>
-<!-- main js -->
-<script src="/assets_admin/libs/js/main-js.js"></script>
-<!-- chart chartist js -->
-<script src="/assets_admin/vendor/charts/chartist-bundle/chartist.min.js"></script>
-<!-- sparkline js -->
-<script src="/assets_admin/vendor/charts/sparkline/jquery.sparkline.js"></script>
-<!-- morris js -->
-<script src="/assets_admin/vendor/charts/morris-bundle/raphael.min.js"></script>
-<script src="/assets_admin/vendor/charts/morris-bundle/morris.js"></script>
-<!-- chart c3 js -->
-<script src="/assets_admin/vendor/charts/c3charts/c3.min.js"></script>
-<script src="/assets_admin/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
-<script src="/assets_admin/vendor/charts/c3charts/C3chartjs.js"></script>
-<script src="/assets_admin/libs/js/dashboard-ecommerce.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jquery 3.3.1 -->
+    <script src="/assets_admin/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <!-- bootstap bundle js -->
+    <script src="/assets_admin/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- slimscroll js -->
+    <script src="/assets_admin/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <!-- main js -->
+    <script src="/assets_admin/libs/js/main-js.js"></script>
+    <!-- chart chartist js -->
+    <script src="/assets_admin/vendor/charts/chartist-bundle/chartist.min.js"></script>
+    <!-- sparkline js -->
+    <script src="/assets_admin/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <!-- morris js -->
+    <script src="/assets_admin/vendor/charts/morris-bundle/raphael.min.js"></script>
+    <script src="/assets_admin/vendor/charts/morris-bundle/morris.js"></script>
+    <!-- chart c3 js -->
+    <script src="/assets_admin/vendor/charts/c3charts/c3.min.js"></script>
+    <script src="/assets_admin/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+    <script src="/assets_admin/vendor/charts/c3charts/C3chartjs.js"></script>
+    <script src="/assets_admin/libs/js/dashboard-ecommerce.js"></script>
 
 
 </body>

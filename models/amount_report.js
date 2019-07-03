@@ -48,6 +48,10 @@ AmountReport.getById = async (id) => {
     return await AmountReport.findOne({
         _id: id
     }).exec();
-}
+};
+
+AmountReport.getAll = async () => {
+    return await AmountReport.find({}).exec();
+};
 
 module.exports = AmountReport;

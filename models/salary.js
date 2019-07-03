@@ -60,4 +60,8 @@ Salary.getById = async (employeeId) => {
     return sumSalary;
 };
 
+Salary.getAll = async () => {
+    return await Salary.find({}).exec();
+};
+
 module.exports = Salary;

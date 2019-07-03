@@ -45,4 +45,8 @@ Receipt.isValid = async ({
     return numberOfMoney <= customer.debtMoney
 };
 
+Receipt.getAll = async () => {
+    return await Receipt.find({}).exec();
+};
+
 module.exports = Receipt;
