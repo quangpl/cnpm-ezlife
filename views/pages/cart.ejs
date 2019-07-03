@@ -173,83 +173,20 @@
                                         <th class="product-remove">Remove</th>
                                         <th class="product-image">Image</th>
                                         <th class="t-product-name">Product Name</th>
-                                        <th class="product-edit">Category</th>
                                         <th class="product-unit-price">Unit Price</th>
-                                        <th class="product-quantity">Quantity</th>
-                                        <th class="product-subtotal">Subtotal</th>
+                                         <th class="product-unit-price">Amount</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="product-remove">
-                                            <a href="#">
-                                                <i class="flaticon-delete"></i>
-                                            </a>
-                                        </td>
-                                        <td class="product-image">
-                                            <a href="#">
-                                                <img src="img/shop/1.jpg" alt="">
-                                            </a>
-                                        </td>
-                                        <td class="t-product-name">
-                                            <h3>
-                                                <a href="#">Cold mountain</a>
-                                            </h3>
-                                        </td>
-                                        <td class="product-edit">
-                                            <p>
-                                                <a href="#">Your categories</a>
-                                            </p>
-                                        </td>
-                                        <td class="product-unit-price">
-                                            <p>$ 100</p>
-                                        </td>
-                                        <td class="product-quantity product-cart-details">
-											<input type="number" value="1">
-										</td>
-                                        <td class="product-quantity">
-											<p>$ 100</p>
-										</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="product-remove">
-                                            <a href="#">
-                                                <i class="flaticon-delete"></i>
-                                            </a>
-                                        </td>
-                                        <td class="product-image">
-                                            <a href="#">
-                                                <img src="img/shop/2.jpg" alt="">
-                                            </a>
-                                        </td>
-                                        <td class="t-product-name">
-                                            <h3>
-                                                <a href="#">East of eden</a>
-                                            </h3>
-                                        </td>
-                                        <td class="product-edit">
-                                            <p>
-                                               <a href="#">Edit</a>
-                                            </p>
-                                        </td>
-                                        <td class="product-unit-price">
-                                            <p>$ 100</p>
-                                        </td>
-                                        <td class="product-quantity product-cart-details">
-											<input type="number" value="1">
-										</td>
-                                        <td class="product-quantity">
-											<p>$ 100</p>
-										</td>
-                                    </tr>
+                                <tbody id="your-cart">
+                                 
+
                                 </tbody>
                             </table>
                         </div>	
                         <div class="shopingcart-bottom-area">
-                            <a class="left-shoping-cart" href="#">CONTINUE SHOPPING</a>
+                            <a class="left-shoping-cart" href="/">CONTINUE SHOPPING</a>
                             <div class="shopingcart-bottom-area pull-right">
-								<a class="right-shoping-cart" href="#">CLEAR SHOPPING CART</a>
-								<a class="right-shoping-cart" href="#">UPDATE SHOPPING CART</a>
+								<a class="right-shoping-cart" href="javascript: void(0)" onclick="deleteItem()">CLEAR SHOPPING CART</a>
 							</div>
                         </div>	                
 		            </div>
@@ -426,5 +363,50 @@
 		<script src="lib/home.js" type="text/javascript"></script>
 		<!-- main js -->
         <script src="js/main.js"></script>
+        <script>
+        let listCart = JSON.parse(localStorage.getItem('listCart'));
+        console.log(listCart)
+        let cartHtml='';
+        if(listCart){
+        listCart.forEach( e =>{
+             e = JSON.parse(e);
+            cartHtml +=`
+               <tr>
+                   <td class="product-remove">
+                       <a href="#" data-id="${e._id}" onclick="deleteItem(this)">
+                           <i class="flaticon-delete"></i>
+                       </a>
+                   </td>
+                   <td class="product-image">
+                       <a href="#">
+                           <img src="${e.image}" alt="">
+                       </a>
+                   </td>
+                   <td class="t-product-name">
+                       <h3>
+                           <a href="#">${e.name}</a>
+                       </h3>
+                   </td>
+                   <td class="product-unit-price">
+                       <p>$ ${e.unitPrice}</p>
+                   </td>
+                    <td class="product-unit-price">
+                        <p>${e.count}</p>
+                    </td>
+               </tr>
+            `
+        })
+     }
+        document.getElementById('your-cart').innerHTML=cartHtml;
+        
+        function deleteItem(){
+           localStorage.clear('listCart')
+              Swal.fire({
+              type: 'success',
+              title: 'Done',
+              text: 'You have been delete cart completely'
+              })
+        }
+        </script>
     </body>
 </html>

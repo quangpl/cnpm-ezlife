@@ -23,7 +23,7 @@ router.get('/type', async function (req, res, next) {
 });
 
 router.get('/cart', async function (req, res, next) {
-    res.render('./pages/cart');
+    res.render('./pages/cart', { customerId: req.session.customerId });
 });
 
 router.get('/checkout', async function (req, res, next) {
@@ -31,7 +31,7 @@ router.get('/checkout', async function (req, res, next) {
 });
 
 router.get('/login', async function (req, res, next) {
-    res.render('./pages/login');
+    res.render('./pages/login', { customerId: req.session.customerId });
 });
 
 router.get('/my-account', async function (req, res, next) {

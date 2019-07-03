@@ -196,27 +196,28 @@
                         </div>
                         <p><%= book.shortDesc %></p>
                         <div class="single-product-price">
-                            <h2>$49.66</h2>
+                            <h2>$<%=book.unitPrice%></h2>
                         </div>
                         <div class="product-attributes clearfix">
                             <span class="pull-left" id="quantity-wanted-p">
                                 <span class="dec qtybutton">-</span>
-                                <input type="text" value="1" class="cart-plus-minus-box">
+                                <input type="text" value="1" id="count-item" class="cart-plus-minus-box">
                                 <span class="inc qtybutton">+</span>
                             </span>
                             <span>
-                                <a class="cart-btn btn-default" href="cart.html">
+                                <a class="cart-btn btn-default" data-id="<%=book._id%>" href="javascript: void(0)"
+                                    onclick="addToCart(this)">
                                     <i class="flaticon-shop"></i>
                                     Add to cart
                                 </a>
                             </span>
                         </div>
-                        <div class="add-to-wishlist">
+                        <!-- <div class="add-to-wishlist">
                             <a class="wish-btn" href="cart.html">
                                 <i class="fa fa-heart-o"></i>
                                 ADD TO WISHLIST
                             </a>
-                        </div>
+                        </div> -->
                         <div class="single-product-categories">
                             <label>Categories:</label>
                             <span><%= book.typeId %></span>
@@ -476,6 +477,9 @@
     <script src="lib/home.js" type="text/javascript"></script>
     <!-- main js -->
     <script src="js/main.js"></script>
+    <!-- swal js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css">
     <script>
         let newList = new Array();
         let currentList = localStorage.getItem('listSeen');
@@ -496,6 +500,37 @@
         } else {
             newList.push(JSON.stringify(book))
             localStorage.setItem('listSeen', JSON.stringify(newList));
+        }
+
+        function addToCart(element) {
+            let id = $(element).attr("data-id");
+            let newList = new Array();
+            let currentList = localStorage.getItem('listCart');
+            currentList = JSON.parse(currentList)
+            let book = {
+                _id: '<%= book._id %>',
+                image: '<%= book.image %>',
+                name: '<%= book.name %>',
+                unitPrice: '<%= book.unitPrice %>',
+                count: $('#count-item').val()
+            }
+            let listId = [];
+            if (currentList != null) {
+                let listId = currentList.map(e => JSON.parse(e)._id);
+                if (listId.indexOf('<%= book._id %>') == -1) {
+                    currentList.push(JSON.stringify(book));
+                    localStorage.setItem('listCart', JSON.stringify(currentList));
+                }
+            } else {
+                newList.push(JSON.stringify(book))
+                localStorage.setItem('listCart', JSON.stringify(newList));
+            }
+            Swal.fire({
+                type: 'success',
+                title: 'Done',
+                text: 'You have add to cart completely'
+            })
+
         }
     </script>
     <!--Facebook SDK -->

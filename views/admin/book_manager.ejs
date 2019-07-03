@@ -329,7 +329,7 @@
         //Action implement
 
         function editBook(element) {
-            console.log($(element).attr("data-id"))
+
             let bookId = $(element).attr("data-id");
             $.get(`/admin/book/${bookId}`, {}, function (result) {
                 if (result.success === true) {
