@@ -235,9 +235,9 @@
                                                         <td><%= e.time %></td>
                                                         <td><%= e.firstAmount %></td>
                                                         <td><%= e.lastAmount %></td>
-                                                        <td><i data-id="<%= e._id %>" onclick="editBook(this)"
+                                                        <td><i data-id="<%= e._id %>" onclick="editAmountReport(this)"
                                                                 class="fa fa-edit button-edit"></i></td>
-                                                        <td><i data-id="<%= e._id %>" onclick="deleteBook(this)"
+                                                        <td><i data-id="<%= e._id %>" onclick="deleteAmountReport(this)"
                                                                 class="fa fa-trash button-delete"></i>
                                                         </td>
 
@@ -256,9 +256,9 @@
                                                         <td><%= e.time %></td>
                                                         <td><%= e.firstDebt %></td>
                                                         <td><%= e.lastDebt %></td>
-                                                        <td><i data-id="<%= e._id %>" onclick="editBook(this)"
+                                                        <td><i data-id="<%= e._id %>" onclick="editDebtReport(this)"
                                                                 class="fa fa-edit button-edit"></i></td>
-                                                        <td><i data-id="<%= e._id %>" onclick="deleteBook(this)"
+                                                        <td><i data-id="<%= e._id %>" onclick="deleteDebtReport(this)"
                                                                 class="fa fa-trash button-delete"></i>
                                                         </td>
 
@@ -326,20 +326,50 @@
     <script src="/assets_admin/vendor/slimscroll/jquery.slimscroll.js"></script>
     <!-- main js -->
     <script src="/assets_admin/libs/js/main-js.js"></script>
-    <!-- chart chartist js -->
-    <script src="/assets_admin/vendor/charts/chartist-bundle/chartist.min.js"></script>
-    <!-- sparkline js -->
-    <script src="/assets_admin/vendor/charts/sparkline/jquery.sparkline.js"></script>
-    <!-- morris js -->
-    <script src="/assets_admin/vendor/charts/morris-bundle/raphael.min.js"></script>
-    <script src="/assets_admin/vendor/charts/morris-bundle/morris.js"></script>
-    <!-- chart c3 js -->
-    <script src="/assets_admin/vendor/charts/c3charts/c3.min.js"></script>
-    <script src="/assets_admin/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
-    <script src="/assets_admin/vendor/charts/c3charts/C3chartjs.js"></script>
+
     <script src="/assets_admin/libs/js/dashboard-ecommerce.js"></script>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css">
 </body>
 
 </html>
+
+<script>
+    function deleteAmountReport(element) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            console.log(result)
+            if (result.value) {
+                {
+                    $.post('/admin/report/delete', {
+                        amountReportId: $(element).attr("data-id")
+                    }, function (result) {
+                        if (result.success === true) {
+                            Swal.fire({
+                                type: 'success',
+                                title: 'Done',
+                                text: 'You have been delete completely'
+                            })
+                            console.log('post success')
+                            location.reload();
+                        } else {
+                            Swal.fire({
+                                type: 'error',
+                                title: 'Error',
+                                text: 'Your input is not valid'
+                            })
+                        }
+
+                    });
+                }
+            }
+        })
+    }
+</script>

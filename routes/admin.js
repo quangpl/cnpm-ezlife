@@ -39,6 +39,20 @@ router.post('/bill', async function (req, res, next) {
     }
 });
 
+router.post('/bill/delete', async function (req, res, next) {
+    try {
+        await Bill.delete(req.body.billId)
+        res.json({
+            success: true
+        })
+    } catch (e) {
+        res.json({
+            success: false,
+            error: e
+        })
+    }
+});
+
 router.get('/customer', async function (req, res, next) {
     let customers = await Customer.getAll();
 
@@ -56,6 +70,20 @@ router.post('/customer', async function (req, res, next) {
             debtMoney: req.body.debtMoney,
         });
 
+        res.json({
+            success: true
+        })
+    } catch (e) {
+        res.json({
+            success: false,
+            error: e
+        })
+    }
+});
+
+router.post('/customer/delete', async function (req, res, next) {
+    try {
+        await Customer.delete(req.body.customerId)
         res.json({
             success: true
         })
@@ -154,8 +182,10 @@ router.post('/book/update', async function (req, res, next) {
     }
 });
 
-router.get('/staff', function (req, res, next) {
-    res.render('admin/staff_manager');
+router.get('/staff', async function (req, res, next) {
+    let staffs = await Staff.getAll();
+
+    res.render('admin/staff_manager', { staffs: staffs });
 });
 
 router.post('/staff', async function (req, res, next) {
@@ -180,6 +210,20 @@ router.post('/staff', async function (req, res, next) {
     }
 });
 
+router.post('/staff/delete', async function (req, res, next) {
+    try {
+        await Staff.delete(req.body.staffId)
+        res.json({
+            success: true
+        })
+    } catch (e) {
+        res.json({
+            success: false,
+            error: e
+        })
+    }
+});
+
 router.get('/report', async function (req, res, next) {
     let amountReports = await AmountReport.getAll();
     let debtReports = await DebtReport.getAll();
@@ -188,6 +232,41 @@ router.get('/report', async function (req, res, next) {
         amountReports: amountReports,
         debtReports: debtReports
     });
+});
+
+router.post('/report', async function (req, res, next) {
+    console.log(req.body);
+    try {
+        let newAmountReport = await AmountReport.add({
+            bookId: req.body.bookId,
+            time: req.body.time,
+            firstAmount: req.body.firstAmount,
+            lastAmount: req.body.lastAmount
+        });
+
+        res.json({
+            success: true
+        })
+    } catch (e) {
+        res.json({
+            success: false,
+            error: e
+        })
+    }
+});
+
+router.post('/report/delete', async function (req, res, next) {
+    try {
+        await AmountReport.delete(req.body.amountReportId)
+        res.json({
+            success: true
+        })
+    } catch (e) {
+        res.json({
+            success: false,
+            error: e
+        })
+    }
 });
 
 router.get('/setting', async function (req, res, next) {
@@ -204,6 +283,20 @@ router.post('/setting', async function (req, res, next) {
             value: req.body.value,
         });
 
+        res.json({
+            success: true
+        })
+    } catch (e) {
+        res.json({
+            success: false,
+            error: e
+        })
+    }
+});
+
+router.post('/setting/delete', async function (req, res, next) {
+    try {
+        await Setting.delete(req.body.settingId)
         res.json({
             success: true
         })
