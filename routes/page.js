@@ -43,7 +43,7 @@ router.get('/book', async function (req, res, next) {
         let book = await Book.getById(req.query.id);
         let relates = await Book.getByCategory(book.typeId);
 
-        res.render('./pages/book', { book: book, relates: relates });
+        res.render('./pages/book', { book: book, relates: relates, customerId: req.session.customerId });
     } else {
         res.redirect('/')
     }

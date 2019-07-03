@@ -161,7 +161,7 @@
                                             <div class="input-group date" id="datetimepicker4"
                                                 data-target-input="nearest">
                                                 <input type="text" class="form-control datetimepicker-input"
-                                                    data-target="#datetimepicker4" />
+                                                    data-target="#datetimepicker4" disabled />
                                                 <div class="input-group-append" data-target="#datetimepicker4"
                                                     data-toggle="datetimepicker">
                                                     <div class="input-group-text"><i class="far fa-calendar-alt"></i>
@@ -174,7 +174,7 @@
                                             <div class="input-group date" id="datetimepicker4"
                                                 data-target-input="nearest">
                                                 <input type="text" class="form-control datetimepicker-input"
-                                                    data-target="#datetimepicker4" />
+                                                    data-target="#datetimepicker4" disabled />
                                                 <div class="input-group-append" data-target="#datetimepicker4"
                                                     data-toggle="datetimepicker">
                                                     <div class="input-group-text"><i class="far fa-calendar-alt"></i>
@@ -182,7 +182,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button class="btn btn-primary">Print Report</button>
+                                        <button class="btn btn-primary" disabled>View Report</button> <i>Coming soon</i>
                                     </div>
 
                                 </div>
@@ -191,9 +191,24 @@
                                 <div class="card">
                                     <h5 class="card-header">Summary</h5>
                                     <div class="card-body">
-                                        <h5><i class="fas fa-check mr-2"></i><b class="mr-2">Maximum:</b> 123 </h5>
-                                        <h5><i class="fas fa-times mr-2"></i><b class="mr-2">Minimum:</b> 23 </h5>
-                                        <h5><i class="fas fa-calculator mr-2"></i><b class="mr-2">Average:</b> 73</h5>
+                                        <h5><i class="fas fa-check mr-2"></i><b class="mr-2">Sum up customer:</b>
+                                            <%=sum.customer%>
+                                        </h5>
+                                        <h5><i class="fas fa-check mr-2"></i><b class="mr-2">Available of Book:</b>
+                                            <%=sum.book%>
+
+                                        </h5>
+                                        <h5><i class="fas fa-check mr-2"></i><b class="mr-2">Available of Bill:</b>
+                                            <%=sum.bill%>
+
+                                        </h5>
+
+                                        <h5><i class="fas fa-check mr-2"></i><b class="mr-2">Amount of Money:</b>
+                                            <%=sum.value%>
+                                        </h5>
+                                        <h5><i class="fas fa-calculator mr-2"></i><b class="mr-2">Sum up Debt:</b>
+                                            <%=sum.debt%>
+                                        </h5>
 
                                     </div>
 
@@ -212,56 +227,25 @@
                                             <table class="table">
                                                 <thead class="bg-light">
                                                     <tr class="border-0">
-                                                        <th class="border-0">Book ID</th>
-                                                        <th class="border-0">Time</th>
-                                                        <th class="border-0">First amount</th>
-                                                        <th class="border-0">Last Amount</th>
+                                                        <th class="border-0">Bill Id</th>
+                                                        <th class="border-0">Customer Id</th>
+                                                        <th class="border-0">Employee Id</th>
+                                                        <th class="border-0">Value</th>
 
                                                     </tr>
                                                 </thead>
                                                 <tbody>
 
-                                                    <% amountReports.forEach((e)=>{ %>
+                                                    <% bills.forEach((e)=>{ %>
                                                     <tr>
                                                         <td><%= e._id %></td>
-                                                        <td>
-                                                            <div class="m-r-10"><img src="<%= e.image %>" alt="user"
-                                                                    class="rounded" width="45">
-                                                            </div>
-                                                        </td>
-                                                        <td><%= e.bookId %></td>
-                                                        <td><%= e.time %></td>
-                                                        <td><%= e.firstAmount %></td>
-                                                        <td><%= e.lastAmount %></td>
-                                                        <td><i data-id="<%= e._id %>" onclick="editAmountReport(this)"
-                                                                class="fa fa-edit button-edit"></i></td>
-                                                        <td><i data-id="<%= e._id %>" onclick="deleteAmountReport(this)"
-                                                                class="fa fa-trash button-delete"></i>
-                                                        </td>
+                                                        <td><%= e.customerId%></td>
+                                                        <td><%= e.employeeId%></td>
+                                                        <td><%= e.value %></td>
 
                                                     </tr>
                                                     <% }) %>
 
-                                                    <% debtReports.forEach((e)=>{ %>
-                                                    <tr>
-                                                        <td><%= e._id %></td>
-                                                        <td>
-                                                            <div class="m-r-10"><img src="<%= e.image %>" alt="user"
-                                                                    class="rounded" width="45">
-                                                            </div>
-                                                        </td>
-                                                        <td><%= e.customerId %></td>
-                                                        <td><%= e.time %></td>
-                                                        <td><%= e.firstDebt %></td>
-                                                        <td><%= e.lastDebt %></td>
-                                                        <td><i data-id="<%= e._id %>" onclick="editDebtReport(this)"
-                                                                class="fa fa-edit button-edit"></i></td>
-                                                        <td><i data-id="<%= e._id %>" onclick="deleteDebtReport(this)"
-                                                                class="fa fa-trash button-delete"></i>
-                                                        </td>
-
-                                                    </tr>
-                                                    <% }) %>
 
                                                 </tbody>
                                             </table>
@@ -270,15 +254,6 @@
                                 </div>
                             </div>
 
-
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <div class="card">
-                                    <h5 class="card-header">Bar Charts</h5>
-                                    <div class="card-body">
-                                        <canvas id="chartjs_bar"></canvas>
-                                    </div>
-                                </div>
-                            </div>
                             <!-- ============================================================== -->
                             <!-- end recent orders  -->
                         </div>
@@ -331,43 +306,3 @@
 </body>
 
 </html>
-
-<script>
-    function deleteAmountReport(element) {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            console.log(result)
-            if (result.value) {
-                {
-                    $.post('/admin/report/delete', {
-                        amountReportId: $(element).attr("data-id")
-                    }, function (result) {
-                        if (result.success === true) {
-                            Swal.fire({
-                                type: 'success',
-                                title: 'Done',
-                                text: 'You have been delete completely'
-                            })
-                            console.log('post success')
-                            location.reload();
-                        } else {
-                            Swal.fire({
-                                type: 'error',
-                                title: 'Error',
-                                text: 'Your input is not valid'
-                            })
-                        }
-
-                    });
-                }
-            }
-        })
-    }
-</script>

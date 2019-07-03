@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const SettingSchema = new Schema({
-    description: {
+    nameId: {
         type: String,
         required: true
     },
@@ -12,8 +12,8 @@ const SettingSchema = new Schema({
         required: true
     },
 }, {
-    timestamps: true,
-    versionKey: false
-});
+        timestamps: true,
+        versionKey: false
+    });
 
 module.exports = SettingSchema;
