@@ -54,4 +54,8 @@ Staff.getById = async (id) => {
     }).exec();
 };
 
+Staff.getAll = async () => {
+    return await Staff.find({}).exec();
+};
+
 module.exports = Staff;

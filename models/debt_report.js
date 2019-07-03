@@ -50,4 +50,8 @@ DebtReport.getById = async (id) => {
     }).exec();
 }
 
+DebtReport.getAll = async () => {
+    return await DebtReport.find({}).exec();
+};
+
 module.exports = DebtReport;

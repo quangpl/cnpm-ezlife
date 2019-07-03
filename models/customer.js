@@ -100,4 +100,8 @@ Customer.getById = async (id) => {
     }).exec();
 };
 
+Customer.getAll = async () => {
+    return await Customer.find({}).exec();
+};
+
 module.exports = Customer;

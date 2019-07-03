@@ -12,326 +12,330 @@
     <link rel="stylesheet" href="/assets_admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
     <link rel="stylesheet" href="/assets_admin/vendor/charts/chartist-bundle/chartist.css">
     <link rel="stylesheet" href="/assets_admin/vendor/charts/morris-bundle/morris.css">
-    <link rel="stylesheet" href="/assets_admin/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <link rel="stylesheet"
+        href="/assets_admin/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/assets_admin/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="/assets_admin/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <title>Quản trị nhà sách | EZLIFE </title>
 </head>
 
 <body>
-<!-- ============================================================== -->
-<!-- main wrapper -->
-<!-- ============================================================== -->
-<div class="dashboard-main-wrapper">
     <!-- ============================================================== -->
-    <!-- navbar -->
+    <!-- main wrapper -->
     <!-- ============================================================== -->
-    <div class="dashboard-header">
-        <nav class="navbar navbar-expand-lg bg-white fixed-top">
-            <a class="navbar-brand" href="index.html">EZLIFE</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto navbar-right-top">
-                    <li class="nav-item">
-                        <div id="custom-search" class="top-search-bar">
-                            <input class="form-control" type="text" placeholder="Search..">
-                        </div>
-                    </li>
-
-                    <li class="nav-item dropdown nav-user">
-                        <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false"><img src="/assets_admin/images/avatar-1.jpg" alt=""
-                                                                           class="user-avatar-md rounded-circle"></a>
-                        <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
-                             aria-labelledby="navbarDropdownMenuLink2">
-                            <div class="nav-user-info">
-                                <h5 class="mb-0 text-white nav-user-name">Your name </h5>
-                                <span class="status"></span><span class="ml-2">Admin</span>
-                            </div>
-                            <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Change password</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <!-- ============================================================== -->
-    <!-- end navbar -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- left sidebar -->
-    <!-- ============================================================== -->
-    <div class="nav-left-sidebar sidebar-dark">
-        <div class="menu-list">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="d-xl-none d-lg-none" href="#">Quản lý chung</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="dashboard-main-wrapper">
+        <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="index.html">EZLIFE</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav flex-column">
-                        <li class="nav-divider">
-                            Menu
-                        </li>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
                         <li class="nav-item">
-                            <a class="nav-link" href="https://google.vn" aria-expanded="false"
-                               aria-controls="submenu-2"><i class="fa fa-fw fa-home"></i>Home</a>
-                            <div id="submenu-2" class="collapse submenu" style="">
-
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="https://google.vn" aria-expanded="false"
-                               aria-controls="submenu-2"><i class="fa fa-fw fa-money-bill-alt"></i>Bill Manager</a>
-                            <div id="submenu-2" class="collapse submenu" style="">
-
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="https://google.vn" aria-expanded="false"
-                               aria-controls="submenu-2"><i class="fa fa-fw fa-user"></i>Customer Manager</a>
-                            <div id="submenu-2" class="collapse submenu" style="">
-
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://google.vn" aria-expanded="false"
-                               aria-controls="submenu-2"><i class="fa fa-fw fa-book"></i>Book Manager</a>
-                            <div id="submenu-2" class="collapse submenu" style="">
-
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://google.vn" aria-expanded="false"
-                               aria-controls="submenu-2"><i class="fa fa-fw fa-user-md"></i>Staff Manager</a>
-                            <div id="submenu-2" class="collapse submenu" style="">
-
+                            <div id="custom-search" class="top-search-bar">
+                                <input class="form-control" type="text" placeholder="Search..">
                             </div>
                         </li>
 
-
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://google.vn" aria-expanded="false"
-                               aria-controls="submenu-2"><i class="fa fa-fw fa-file"></i>Report</a>
-                            <div id="submenu-2" class="collapse submenu" style="">
-
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
+                                    src="/assets_admin/images/avatar-1.jpg" alt=""
+                                    class="user-avatar-md rounded-circle"></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
+                                aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-white nav-user-name">Your name </h5>
+                                    <span class="status"></span><span class="ml-2">Admin</span>
+                                </div>
+                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Change password</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://google.vn" aria-expanded="false"
-                               aria-controls="submenu-2"><i class="fa fa-fw fa-cogs"></i>Setting</a>
-                            <div id="submenu-2" class="collapse submenu" style="">
-
-                            </div>
-                        </li>
-
-
                     </ul>
                 </div>
             </nav>
         </div>
-    </div>
-    <!-- ============================================================== -->
-    <!-- end left sidebar -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- wrapper  -->
-    <!-- ============================================================== -->
-    <div class="dashboard-wrapper">
-        <div class="dashboard-ecommerce">
-            <div class="container-fluid dashboard-content ">
-                <div class="ecommerce-widget">
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Quản lý chung</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                    aria-controls="submenu-2"><i class="fa fa-fw fa-home"></i>Home</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
 
-
-                    <div class="row">
-                        <!-- ============================================================== -->
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="card">
-                                <h5 class="card-header">Basic Form</h5>
-                                <div class="card-body">
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="inputText3" class="col-form-label">ID</label>
-                                            <input id="customerId" name="customerId" type="text" class="form-control">
-                                        </div>
-                                    
-                                        <div class="form-group">
-                                            <label for="inputText4" class="col-form-label">Customer Name</label>
-                                            <input id="customerName" name="customerName" type="text" class="form-control" >
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputText5">Phone</label>
-                                            <input id="phone" name="phone" type="text" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputText6">Address</label>
-                                            <input id="address" name="address" type="text" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputEmail">Email address</label>
-                                            <input id="email" name="email" type="email" placeholder="name@example.com" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputText7">Dept</label>
-                                            <input id="dept" name="dept" type="number" class="form-control">
-                                        </div>
-                                    </form>
-                                    <button class="btn btn-primary d-inline-block" type="submit">Submit</button>
                                 </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="https://google.vn" aria-expanded="false"
+                                    aria-controls="submenu-2"><i class="fa fa-fw fa-money-bill-alt"></i>Bill Manager</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
 
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="https://google.vn" aria-expanded="false"
+                                    aria-controls="submenu-2"><i class="fa fa-fw fa-user"></i>Customer Manager</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
+
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                    aria-controls="submenu-2"><i class="fa fa-fw fa-book"></i>Book Manager</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
+
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                    aria-controls="submenu-2"><i class="fa fa-fw fa-user-md"></i>Staff Manager</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
+
+                                </div>
+                            </li>
+
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                    aria-controls="submenu-2"><i class="fa fa-fw fa-file"></i>Report</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
+
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://google.vn" aria-expanded="false"
+                                    aria-controls="submenu-2"><i class="fa fa-fw fa-cogs"></i>Setting</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
+
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-ecommerce">
+                <div class="container-fluid dashboard-content ">
+                    <div class="ecommerce-widget">
+
+
+                        <div class="row">
+                            <!-- ============================================================== -->
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Basic Form</h5>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="inputText3" class="col-form-label">ID</label>
+                                                <input id="customerId" name="customerId" type="text"
+                                                    class="form-control">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="inputText4" class="col-form-label">Customer Name</label>
+                                                <input id="customerName" name="customerName" type="text"
+                                                    class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputText5">Phone</label>
+                                                <input id="phone" name="phone" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputText6">Address</label>
+                                                <input id="address" name="address" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputEmail">Email address</label>
+                                                <input id="email" name="email" type="email"
+                                                    placeholder="name@example.com" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputText7">Dept</label>
+                                                <input id="dept" name="dept" type="number" class="form-control">
+                                            </div>
+                                        </form>
+                                        <button class="btn btn-primary d-inline-block" type="submit">Submit</button>
+                                    </div>
+
+                                </div>
                             </div>
-                        </div>
-                        <!-- ============================================================== -->
+                            <!-- ============================================================== -->
 
-                        <!-- recent orders  -->
-                        <!-- ============================================================== -->
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="card">
-                                <h5 class="card-header">Recent Orders</h5>
-                                <div class="card-body p-0">
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <thead class="bg-light">
-                                            <tr class="border-0">
-                                                <th class="border-0">ID</th>
-                                                <th class="border-0">Customer Name</th>
-                                                <th class="border-0">Phone</th>
-                                                <th class="border-0">Address</th>
-                                                <th class="border-0">Email address</th>
-                                                <th class="border-0">Dept</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>1</td>                                      
-                                                <td>Tran Van A</td>
-                                                <td>09999999</td>
-                                                <td>17A Phan Chu Trinh</td>
-                                                <td>atranvan@gmail.com</td>
-                                                <td>20.000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>                                      
-                                                <td>Tran Van A</td>
-                                                <td>09999999</td>
-                                                <td>17A Phan Chu Trinh</td>
-                                                <td>atranvan@gmail.com</td>
-                                                <td>20.000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>                                      
-                                                <td>Tran Van A</td>
-                                                <td>09999999</td>
-                                                <td>17A Phan Chu Trinh</td>
-                                                <td>atranvan@gmail.com</td>
-                                                <td>20.000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>                                      
-                                                <td>Tran Van A</td>
-                                                <td>09999999</td>
-                                                <td>17A Phan Chu Trinh</td>
-                                                <td>atranvan@gmail.com</td>
-                                                <td>20.000</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="9"><a href="#" class="btn btn-outline-light float-right">View
-                                                    Details</a></td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
+                            <!-- recent orders  -->
+                            <!-- ============================================================== -->
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Recent Orders</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">ID</th>
+                                                        <th class="border-0">Customer Name</th>
+                                                        <th class="border-0">Phone</th>
+                                                        <th class="border-0">Address</th>
+                                                        <th class="border-0">Email address</th>
+                                                        <th class="border-0">Dept</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <% customers.forEach((e)=>{ %>
+                                                    <tr>
+                                                        <td><%= e._id %></td>
+                                                        <td>
+                                                            <div class="m-r-10"><img src="<%= e.image %>" alt="user"
+                                                                    class="rounded" width="45">
+                                                            </div>
+                                                        </td>
+                                                        <td><%= e.customerName %></td>
+                                                        <td><%= e.phone %></td>
+                                                        <td><%= e.address %></td>
+                                                        <td><%= e.emailAddress %></td>
+                                                        <td><%= e.dept %></td>
+                                                        <td><i data-id="<%= e._id %>" onclick="editCustomer(this)"
+                                                                class="fa fa-edit button-edit"></i></td>
+                                                        <td><i data-id="<%= e._id %>" onclick="deleteCustomer(this)"
+                                                                class="fa fa-trash button-delete"></i>
+                                                        </td>
+
+                                                    </tr>
+                                                    <% }) %>
+
+                                                    <tr>
+                                                        <td colspan="9"><a href="#"
+                                                                class="btn btn-outline-light float-right">View
+                                                                Details</a></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- ============================================================== -->
+                            <!-- end recent orders  -->
                         </div>
-                        <!-- ============================================================== -->
-                        <!-- end recent orders  -->
-                    </div>
 
 
-                </div>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- footer -->
-        <!-- ============================================================== -->
-        <div class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                        Copyright © 2019 <b>EZLIFE</b>. All rights reserved. Base on <b>Colorlib</b>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                        <div class="text-md-right footer-links d-none d-sm-block">
-                            <a href="javascript: void(0);">About</a>
-                        </div>
                     </div>
                 </div>
             </div>
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <div class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            Copyright © 2019 <b>EZLIFE</b>. All rights reserved. Base on <b>Colorlib</b>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="text-md-right footer-links d-none d-sm-block">
+                                <a href="javascript: void(0);">About</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
-        <!-- end footer -->
+        <!-- end wrapper  -->
         <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
-    <!-- end wrapper  -->
+    <!-- end main wrapper  -->
     <!-- ============================================================== -->
-</div>
-<!-- ============================================================== -->
-<!-- end main wrapper  -->
-<!-- ============================================================== -->
-<!-- Optional JavaScript -->
-<!-- jquery 3.3.1 -->
-<script src="/assets_admin/vendor/jquery/jquery-3.3.1.min.js"></script>
-<!-- bootstap bundle js -->
-<script src="/assets_admin/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-<!-- slimscroll js -->
-<script src="/assets_admin/vendor/slimscroll/jquery.slimscroll.js"></script>
-<!-- main js -->
-<script src="/assets_admin/libs/js/main-js.js"></script>
-<!-- chart chartist js -->
-<script src="/assets_admin/vendor/charts/chartist-bundle/chartist.min.js"></script>
-<!-- sparkline js -->
-<script src="/assets_admin/vendor/charts/sparkline/jquery.sparkline.js"></script>
-<!-- morris js -->
-<script src="/assets_admin/vendor/charts/morris-bundle/raphael.min.js"></script>
-<script src="/assets_admin/vendor/charts/morris-bundle/morris.js"></script>
-<!-- chart c3 js -->
-<script src="/assets_admin/vendor/charts/c3charts/c3.min.js"></script>
-<script src="/assets_admin/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
-<script src="/assets_admin/vendor/charts/c3charts/C3chartjs.js"></script>
-<script src="/assets_admin/libs/js/dashboard-ecommerce.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jquery 3.3.1 -->
+    <script src="/assets_admin/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <!-- bootstap bundle js -->
+    <script src="/assets_admin/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- slimscroll js -->
+    <script src="/assets_admin/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <!-- main js -->
+    <script src="/assets_admin/libs/js/main-js.js"></script>
+
+    <script src="/assets_admin/libs/js/dashboard-ecommerce.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css">
 </body>
 
 </html>
 
 <script>
-    $(document).ready(function () {
-        $('#customer-submit').click(function (e) {
-            e.preventDefault();
-            $.post('/admin/customer', {
-                customerId: $('#customerId').val(),
-                customerName: $('#customerName').val(),
-                phone: $('#phone').val(),
-                address: $('#address').val(),
-                email: $('#email').val(),
-                dept: $('#dept').val(),
-            }, function (result) {
+    function deleteCustomer(element) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            console.log(result)
+            if (result.value) {
+                {
+                    $.post('/admin/customer/delete', {
+                        customerId: $(element).attr("data-id")
+                    }, function (result) {
+                        if (result.success === true) {
+                            Swal.fire({
+                                type: 'success',
+                                title: 'Done',
+                                text: 'You have been delete completely'
+                            })
+                            console.log('post success')
+                            location.reload();
+                        } else {
+                            Swal.fire({
+                                type: 'error',
+                                title: 'Error',
+                                text: 'Your input is not valid'
+                            })
+                        }
 
-                console.log(result);
-                if (result.success == true) {
-                    $('#status-sucess').css('display', 'flex');
-                } else {
-                    $('#status-fail').css('display', 'flex');
+                    });
                 }
-            });
-
-        });
-    });
+            }
+        })
+    }
 </script>
