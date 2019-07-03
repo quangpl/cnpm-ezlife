@@ -1,44 +1,81 @@
 const mongoose = require('mongoose');
 const CustomerSchema = require('../schemas/customer');
 let Customer = mongoose.model("Customer", CustomerSchema);
+let bcrypt = require('bcrypt');
 
-Customer.add = async ({
-                          name,
-                          phone,
-                          address,
-                          email,
-                          debtMoney
-                      }) => {
+Customer.register = async ({
+    name,
+    password,
+    email,
+}) => {
+    let hashPassword = await bcrypt.hash(password, 6);
     let newCustomer = new Customer({
         name: name,
-        phone: phone,
-        address: address,
+        password: hashPassword,
         email: email,
-        debtMoney: debtMoney
     });
 
     await newCustomer.save();
     return newCustomer;
 };
 
+Customer.isRegister = async (email) => {
+    let customer = await Customer.findOne({
+        email: email
+    }).exec();
+    return !!customer;
+};
+
+
+Customer.login = async ({
+    email,
+    password,
+}) => {
+    let user = await Customer.findOne({
+        email: email
+    }).exec();
+
+    if (user) {
+        let result = await bcrypt.compare(password, user.password);
+        if (result) {
+            return {
+                login: true,
+                user: user
+            }
+        }
+        else {
+            return {
+                login: false,
+                error: 'Wrong password'
+            }
+        }
+    }
+    else {
+        return {
+            login: false,
+            error: 'User is invalid'
+        }
+    }
+};
+
 Customer.update = async ({
-                          id,
-                          name,
-                          phone,
-                          address,
-                          email,
-                          debtMoney
-                      }) => {
+    id,
+    name,
+    password,
+    phone,
+    address,
+    email
+}) => {
 
     return await Customer.updateOne({
-        _id: id
+        _id: mongoose.Types.ObjectId(id)
     }, {
-        name: name,
-        phone: phone,
-        address: address,
-        email: email,
-        debtMoney: debtMoney
-    }).exec();
+            name: name,
+            password: password,
+            phone: phone,
+            address: address,
+            email: email,
+        }).exec();
 };
 
 Customer.delete = async (id) => {
@@ -51,7 +88,7 @@ Customer.delete = async (id) => {
 Customer.isValid = async (id) => {
 
     let customer = await Customer.findOne({
-        _id: id
+        _id: mongoose.Types.ObjectId(id)
     }).exec();
     return customer.debtMoney < 20000; //fixme : get parameter from setting db
 };
@@ -59,7 +96,7 @@ Customer.isValid = async (id) => {
 Customer.getById = async (id) => {
 
     return await Customer.findOne({
-        _id: id
+        _id: mongoose.Types.ObjectId(id)
     }).exec();
 };
 

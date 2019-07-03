@@ -6,7 +6,7 @@ let logger = require("morgan");
 let mongoose = require("mongoose");
 const config = require("./config");
 let app = express();
-
+let session = require('express-session');
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -16,6 +16,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+//Session config
+app.use(session({
+    secret: 'cnpm@secret#ezlife',
+    resave: false,
+    maxAge: 3600000,
+    saveUninitialized: true
+}))
+//Header config
+app.use((req, res, next) => {
+    res.append('Access-Control-Allow-Origin', ['*']);
+    res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.append('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
+
 
 //Router config
 app.use("/", require("./routes/page"));
@@ -65,9 +81,6 @@ let http = require("http");
 /**
  * Get port from environment and store in Express.
  */
-function add(a, b) {
-    return a + b;
-}
 
 let port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);

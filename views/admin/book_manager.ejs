@@ -206,10 +206,10 @@
                                                 type="submit">
                                                 <i class="fa fa-save"></i> SAVE
                                             </button>
-                                             <button class="btn btn-primary d-inline-block hide" id="book-edit"
-                                                 type="submit">
-                                                 <i class="fa fa-edit"></i> EDIT
-                                             </button>
+                                            <button class="btn btn-primary d-inline-block hide" id="book-edit"
+                                                type="submit">
+                                                <i class="fa fa-edit"></i> EDIT
+                                            </button>
 
                                         </form>
                                     </div>
@@ -323,7 +323,7 @@
     <script src="/assets_admin/vendor/slimscroll/jquery.slimscroll.js"></script>
     <!-- main js -->
     <script src="/assets_admin/libs/js/main-js.js"></script>
-    <!-- behavior js -->
+    <!-- swal js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css">
     <script>
@@ -332,8 +332,7 @@
         function editBook(element) {
             console.log($(element).attr("data-id"))
             let bookId = $(element).attr("data-id");
-            $.get(`/admin/book/${bookId}`, {
-            }, function (result) {
+            $.get(`/admin/book/${bookId}`, {}, function (result) {
                 if (result.success === true) {
                     $('#typeId').val(result.book.typeId)
                     $('#name').val(result.book.name)

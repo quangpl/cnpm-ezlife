@@ -4,7 +4,8 @@ let Book = require('../models/book');
 
 router.get('/', async function (req, res, next) {
     let books = await Book.getAllByNumber(10)
-    res.render('./pages/index', {books: books});
+
+    res.render('./pages/index', { books: books, customerId: req.session.customerId });
 });
 
 router.get('/all', async function (req, res, next) {
@@ -32,7 +33,7 @@ router.get('/book', async function (req, res, next) {
         let book = await Book.getById(req.query.id);
         let relates = await Book.getByCategory(book.typeId);
 
-        res.render('./pages/book', {book: book, relates: relates});
+        res.render('./pages/book', { book: book, relates: relates });
     } else {
         res.redirect('/')
     }
