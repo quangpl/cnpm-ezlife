@@ -42,4 +42,8 @@ Setting.getById = async (id) => {
     }).exec();
 }
 
+Setting.getAll = async () => {
+    return await Setting.find({}).exec();
+};
+
 module.exports = Setting;

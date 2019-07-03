@@ -65,4 +65,8 @@ Bill.getValue = async (listBook) => {
     return value;
 };
 
+Bill.getAll = async () => {
+    return await Bill.find({}).exec();
+};
+
 module.exports = Bill;
