@@ -8,8 +8,18 @@ router.get('/', async function (req, res, next) {
     res.render('./pages/index', { books: books, customerId: req.session.customerId });
 });
 
-router.get('/all', async function (req, res, next) {
-    res.render('./pages/all-products');
+router.get('/type', async function (req, res, next) {
+    if (!req.query.id) {
+        let books = await Book.getAll();
+        res.render('./pages/all-products', { books: books, customerId: req.session.customerId, id: req.query.id });
+        return;
+    }
+    let books = await Book.getByCategory(req.query.id);
+    if (!books) {
+        res.redirect('/');
+        return;
+    }
+    res.render('./pages/all-products', { books: books, customerId: req.session.customerId, id: req.query.id });
 });
 
 router.get('/cart', async function (req, res, next) {
