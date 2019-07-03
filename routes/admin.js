@@ -18,8 +18,15 @@ router.get('/bill', async function (req, res, next) {
     res.render('admin/bill_manager', { bills: bills });
 });
 
+router.get('/bill/:id', async function (req, res, next) {
+    let bill = await Bill.getById(req.params.id);
+    res.json({
+        bill: bill
+    })
+    return;
+});
+
 router.post('/bill', async function (req, res, next) {
-    console.log(req.body);
     try {
         let newBill = await Bill.add({
             customerId: req.body.customerId,

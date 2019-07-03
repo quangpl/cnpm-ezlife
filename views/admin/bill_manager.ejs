@@ -155,42 +155,30 @@
                             <!-- ============================================================== -->
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="card">
-                                    <h5 class="card-header">Basic Form</h5>
+                                    <h5 class="card-header">Bill Manager</h5>
                                     <div class="card-body">
                                         <form>
-                                            <div class="form-group">
-                                                <label for="inputText3" class="col-form-label">ID</label>
-                                                <input id="billId" name="billId" type="text" class="form-control">
-                                            </div>
                                             <div class="form-group">
                                                 <label for="inputText4">Customer Id</label>
                                                 <input id="customerId" name="customerId" type="text"
                                                     class="form-control">
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputEmail">Email address</label>
-                                                <input id="email" name="email" type="email"
-                                                    placeholder="name@example.com" class="form-control">
+                                                <label for="inputEmail">Employee Id</label>
+                                                <input id="employeeId" name="employeeId" type="text"
+                                                    class="form-control">
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputText6">Price</label>
-                                                <input id="price" name="price" type="number" class="form-control">
+                                                <label for="inputText6">Value</label>
+                                                <input id="value" name="value" type="number" class="form-control">
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="inputText6">Book</label>
+                                                <label for="inputText6">Books</label>
                                                 <input id="book" name="book" type="text" class="form-control">
                                             </div>
-
-                                            <div class="form-group">
-                                                <label for="inputText6">Is Paid</label>
-                                                <select name="carlist" class="form-control">
-                                                    <option value="opel">Yes</option>
-                                                    <option value="audi">No</option>
-                                                </select>
-                                            </div>
                                         </form>
-                                        <button class="btn btn-primary d-inline-block" type="submit">Submit</button>
+
                                     </div>
 
                                 </div>
@@ -211,8 +199,11 @@
                                                         <th class="border-0">Book</th>
                                                         <th class="border-0">Customer Id</th>
                                                         <th class="border-0">Employee Id</th>
-                                                        <th class="border-0">Price</th>
+                                                        <th class="border-0">Value</th>
                                                         <th class="border-0">Is Paid</th>
+                                                        <th class="border-0">Pay</th>
+                                                        <th class="border-0">Delete</th>
+                                                        <th class="border-0">View</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -220,21 +211,26 @@
                                                     <% bills.forEach((e)=>{ %>
                                                     <tr>
                                                         <td><%= e._id %></td>
-                                                        <td>
-                                                            <div class="m-r-10"><img src="<%= e.image %>" alt="user"
-                                                                    class="rounded" width="45">
-                                                            </div>
-                                                        </td>
-                                                        <td><%= e.book %></td>
+                                                        <td><%= e.books.length %></td>
                                                         <td><%= e.customerId %></td>
                                                         <td><%= e.employeeId %></td>
-                                                        <td><%= e.price %></td>
+                                                        <td><%= e.value %></td>
                                                         <td><%= e.isPaid %></td>
-                                                        <td><i data-id="<%= e._id %>" onclick="editBill(this)"
-                                                                class="fa fa-edit button-edit"></i></td>
+                                                        <%if(e.isPaid==false){%>
+                                                        <td><i data-id="<%= e._id %>" onclick="payBill(this)"
+                                                                class="fa fa-check-circle button-edit"></i>
+                                                        </td>
+                                                        <%}else {%>
+                                                        <td>
+                                                            <span>Paid</span></td>
+                                                        <% }%>
                                                         <td><i data-id="<%= e._id %>" onclick="deleteBill(this)"
                                                                 class="fa fa-trash button-delete"></i>
                                                         </td>
+                                                        <td><i data-id="<%= e._id %>" onclick="viewBill(this)"
+                                                                class="fa fa-eye button-edit"></i>
+                                                        </td>
+
 
                                                     </tr>
                                                     <% }) %>
@@ -304,6 +300,24 @@
 </html>
 
 <script>
+    function viewBill(element) {
+        let billId = $(element).attr("data-id");
+        $.get(`/admin/bill/${billId}`, function (result) {
+            if (result) {
+                $('#customerId').val(result.bill.customerId);
+                $('#employeeId').val(result.bill.employeeId);
+                $('#value').val(result.bill.value);
+                $('#books').val(result.bill.books);
+            } else {
+                Swal.fire({
+                    type: 'error',
+                    title: 'Error',
+                    text: 'Something went wrong'
+                })
+            }
+        });
+    }
+
     function deleteBill(element) {
         Swal.fire({
             title: 'Are you sure?',
