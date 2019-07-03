@@ -157,36 +157,32 @@
                                     <div class="card-body">
                                         <form>
                                             <div class="form-group">
-                                                <label for="inputText3" class="col-form-label">Name</label>
-                                                <input id="inputText3" type="text" class="form-control">
+                                                <label for="inputText3" class="col-form-label">Username</label>
+                                                <input type="text" id="username" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputText3" class="col-form-label">Password</label>
+                                                <input type="password" id="password" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputEmail">Full Name</label>
+                                                <input id="fullName" type="number" class="form-control">
                                             </div>
                                             <div class="form-group">
                                                 <label for="inputEmail">Phone</label>
-                                                <input id="inputEmail" type="email" placeholder="name@example.com"
-                                                    class="form-control">
-                                                <p>We'll never share your email with anyone else.</p>
+                                                <input id="phone" type="number" class="form-control">
                                             </div>
                                             <div class="form-group">
                                                 <label for="inputText4" class="col-form-label">Address</label>
-                                                <input id="inputText4" type="number" class="form-control"
-                                                    placeholder="Numbers">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="inputPassword">Type</label>
-                                                <input id="inputPassword" type="password" placeholder="Password"
-                                                    class="form-control">
-                                            </div>
-                                            <div class="custom-file mb-3">
-                                                <input type="file" class="custom-file-input" id="customFile">
-                                                <label class="custom-file-label" for="customFile">File Input</label>
+                                                <input id="address" type="number" class="form-control">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleFormControlTextarea1">Employed Time</label>
-                                                <textarea class="form-control" id="exampleFormControlTextarea1"
-                                                    rows="3"></textarea>
+                                                <input class="form-control" id="employedTime" type="text"></input>
                                             </div>
                                         </form>
-                                        <button class="btn btn-primary d-inline-block" type="submit">Submit</button>
+                                        <button class="btn btn-primary d-inline-block" id="btn-staff" type="submit"><i
+                                                class="fa fa-save"></i> Save</button>
                                     </div>
 
                                 </div>
@@ -203,11 +199,14 @@
                                             <table class="table">
                                                 <thead class="bg-light">
                                                     <tr class="border-0">
-                                                        <th class="border-0">Name</th>
+                                                        <th class="border-0">StaffId</th>
+                                                        <th class="border-0">Username</th>
+                                                        <th class="border-0">FullName</th>
                                                         <th class="border-0">Phone</th>
                                                         <th class="border-0">Address</th>
-                                                        <th class="border-0">Type</th>
                                                         <th class="border-0">Employed Time</th>
+                                                        <th class="border-0">Delete</th>
+
 
                                                     </tr>
                                                 </thead>
@@ -215,18 +214,11 @@
                                                     <% staffs.forEach((e)=>{ %>
                                                     <tr>
                                                         <td><%= e._id %></td>
-                                                        <td>
-                                                            <div class="m-r-10"><img src="<%= e.image %>" alt="user"
-                                                                    class="rounded" width="45">
-                                                            </div>
-                                                        </td>
-                                                        <td><%= e.name %></td>
+                                                        <td><%= e.username %></td>
+                                                        <td><%= e.fullName %></td>
                                                         <td><%= e.phone %></td>
                                                         <td><%= e.address %></td>
-                                                        <td><%= e.type %></td>
                                                         <td><%= e.employedTime %></td>
-                                                        <td><i data-id="<%= e._id %>" onclick="editStaff(this)"
-                                                                class="fa fa-edit button-edit"></i></td>
                                                         <td><i data-id="<%= e._id %>" onclick="deleteStaff(this)"
                                                                 class="fa fa-trash button-delete"></i>
                                                         </td>
@@ -338,4 +330,40 @@
             }
         })
     }
+    $(document).ready(function () {
+        $('#btn-staff').click(function (e) {
+            e.preventDefault();
+            $.post('/admin/staff', {
+                username: $('#username').val(),
+                password: $('#password').val(),
+                fullName: $('#fullName').val(),
+                phone: $('#phone').val(),
+                address: $('#address').val(),
+                employedTime: $('#employedTime').val(),
+            }, function (result) {
+                if (result.success === true) {
+                    username: $('#username').val();
+                    password: $('#password').val();
+                    fullName: $('#fullName').val();
+                    phone: $('#phone').val();
+                    address: $('#address').val();
+                    employedTime: $('#employedTime').val();
+                    Swal.fire({
+                        type: 'success',
+                        title: 'Done',
+                        text: 'You have been add completely'
+                    })
+                    location.reload();
+
+                }
+                else {
+                    Swal.fire({
+                        type: 'error',
+                        title: 'Error',
+                        text: 'Your input is not valid'
+                    })
+                }
+            });
+        });
+    });
 </script>

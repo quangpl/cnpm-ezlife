@@ -200,16 +200,15 @@ router.get('/staff', async function (req, res, next) {
 });
 
 router.post('/staff', async function (req, res, next) {
-    console.log(req.body);
     try {
         let newStaff = await Staff.add({
-            type: req.body.type,
-            name: req.body.name,
+            username: req.body.username,
+            password: req.body.password,
+            fullName: req.body.fullName,
             phone: req.body.phone,
             address: req.body.address,
-            employedTime: req.body.employedTime,
+            employedTime: req.body.employedTime
         });
-
         res.json({
             success: true
         })
