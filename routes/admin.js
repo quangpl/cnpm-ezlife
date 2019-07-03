@@ -60,11 +60,27 @@ router.post('/customer', async function (req, res, next) {
 router.get('/book', async function (req, res, next) {
     let books = await Book.getAll();
 
-    res.render('admin/book_manager', {books: books});
+    res.render('admin/book_manager', { books: books });
+});
+router.get('/book/:id', async function (req, res, next) {
+    try {
+        console.log(req.params.id);
+        let book = await Book.getById(req.params.id);
+        console.log(book);
+        res.json({
+            success: true,
+            book: book
+        });
+    }
+    catch (e) {
+        res.json({
+            success: false,
+            error: e
+        });
+    }
 });
 
 router.post('/book', async function (req, res, next) {
-    console.log(req.body);
     try {
         let newBook = await Book.add({
             typeId: req.body.typeId,
@@ -78,6 +94,45 @@ router.post('/book', async function (req, res, next) {
             tag: req.body.tag
         });
 
+        res.json({
+            success: true
+        })
+    } catch (e) {
+        res.json({
+            success: false,
+            error: e
+        })
+    }
+});
+
+router.post('/book/delete', async function (req, res, next) {
+    try {
+        await Book.delete(req.body.bookId)
+        res.json({
+            success: true
+        })
+    } catch (e) {
+        res.json({
+            success: false,
+            error: e
+        })
+    }
+});
+
+router.post('/book/update', async function (req, res, next) {
+    try {
+        await Book.update({
+            id: req.body.bookId,
+            typeId: req.body.typeId,
+            name: req.body.name,
+            author: req.body.author,
+            unitPrice: req.body.unitPrice,
+            shortDesc: req.body.shortDesc,
+            fullDesc: req.body.fullDesc,
+            numberOf: req.body.numberOf,
+            image: req.body.image,
+            tag: req.body.tag
+        })
         res.json({
             success: true
         })

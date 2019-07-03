@@ -3,16 +3,16 @@ const BookSchema = require('../schemas/book');
 let Book = mongoose.model("Book", BookSchema);
 
 Book.add = async ({
-                      typeId,
-                      name,
-                      author,
-                      numberOf,
-                      unitPrice,
-                      shortDesc,
-                      fullDesc,
-                      image,
-                      tag
-                  }) => {
+    typeId,
+    name,
+    author,
+    numberOf,
+    unitPrice,
+    shortDesc,
+    fullDesc,
+    image,
+    tag
+}) => {
 
     let newBook = new Book({
         typeId: typeId,
@@ -31,31 +31,31 @@ Book.add = async ({
 };
 
 Book.update = async ({
-                         id,
-                         type,
-                         name,
-                         author,
-                         numberOf,
-                         unitPrice,
-                         shortDesc,
-                         fullDesc,
-                         image,
-                         tag
-                     }) => {
+    id,
+    type,
+    name,
+    author,
+    numberOf,
+    unitPrice,
+    shortDesc,
+    fullDesc,
+    image,
+    tag
+}) => {
 
     return await Book.updateOne({
         _id: id
     }, {
-        type: type,
-        name: name,
-        author: author,
-        numberOf: numberOf,
-        unitPrice: unitPrice,
-        shortDesc: shortDesc,
-        fullDesc: fullDesc,
-        image: image,
-        tag: tag
-    }).exec();
+            type: type,
+            name: name,
+            author: author,
+            numberOf: numberOf,
+            unitPrice: unitPrice,
+            shortDesc: shortDesc,
+            fullDesc: fullDesc,
+            image: image,
+            tag: tag
+        }).exec();
 };
 
 
@@ -99,9 +99,9 @@ Book.getPriceToSale = async (id) => {
 };
 
 Book.isValid = async ({
-                          id,
-                          numberOfSale
-                      }) => {
+    id,
+    numberOfSale
+}) => {
     let book = await Book.findOne({
         _id: id
     }).exec();
