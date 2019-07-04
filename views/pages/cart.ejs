@@ -74,9 +74,8 @@
                                 <%}%>
                             </li>
                             <li class="shoping-cart">
-                                <a href="#">
+                                <a href="/cart">
                                     <i class="flaticon-shop"></i>
-                                    <span>2</span>
                                 </a>
                             
                             </li>
@@ -110,9 +109,8 @@
                                 <%}%>
                             </li>
                             <li class="shoping-cart">
-                                <a href="#">
+                                <a href="/cart">
                                     <i class="flaticon-shop"></i>
-                                    <span>2</span>
                                 </a>
                             </li>
                         </ul>
@@ -170,7 +168,7 @@
                             <table>
                                 <thead>
                                     <tr>
-                                        <th class="product-remove">Remove</th>
+                                        <!-- <th class="product-remove">Remove</th> -->
                                         <th class="product-image">Image</th>
                                         <th class="t-product-name">Product Name</th>
                                         <th class="product-unit-price">Unit Price</th>
@@ -201,10 +199,7 @@
                     <div class="col-md-12 col-sm-12 col-lg-12">
                         <div class="subtotal-main-area">
                             <div class="subtotal-area">
-                                <h2>SUBTOTAL<span>$ 200</span></h2>
-                            </div>
-                            <div class="subtotal-area">
-                                <h2>GRAND TOTAL<span>$ 200</span></h2>
+                                <h2>TOTAL<span id="sum-price"></span></h2>
                             </div>
                             <a href="#">CHECKOUT</a>
                         </div>
@@ -365,18 +360,21 @@
         <script src="js/main.js"></script>
         <script>
         let listCart = JSON.parse(localStorage.getItem('listCart'));
-        console.log(listCart)
+       
         let cartHtml='';
         if(listCart){
-        listCart.forEach( e =>{
+             let sumPrice;
+             sumPrice = listCart.map(e=>{
+             e = JSON.parse(e);
+             console.log(e.unitPrice);
+             return e.unitPrice;
+             }).reduce((a, b) => parseInt(a) + parseInt(b), 0)
+             $('#sum-price').text(`$${sumPrice}`)
+     listCart.forEach( e =>{
              e = JSON.parse(e);
             cartHtml +=`
                <tr>
-                   <td class="product-remove">
-                       <a href="#" data-id="${e._id}" onclick="deleteItem(this)">
-                           <i class="flaticon-delete"></i>
-                       </a>
-                   </td>
+                  
                    <td class="product-image">
                        <a href="#">
                            <img src="${e.image}" alt="">
@@ -400,12 +398,12 @@
         document.getElementById('your-cart').innerHTML=cartHtml;
         
         function deleteItem(){
-           localStorage.clear('listCart')
+           localStorage.clear('listCart');
               Swal.fire({
               type: 'success',
               title: 'Done',
               text: 'You have been delete cart completely'
-              })
+              });
         }
         </script>
     </body>
