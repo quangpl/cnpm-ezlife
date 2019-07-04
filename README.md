@@ -6,7 +6,7 @@
 
 | Môn học |Ngôn ngữ  |Công nghệ | Nền tảng
 |--|--|--|--|
-|  Công nghệ phần mềm| `NodeJS` | ExpressJS, MongoDB,... | Desktop |
+|  Công nghệ phần mềm| `NodeJS` | ExpressJS, MongoDB,... | Website  |
 
 **Thành viên nhóm :** 
 
