@@ -23,6 +23,11 @@ router.get('/type', async function (req, res, next) {
 });
 
 router.get('/cart', async function (req, res, next) {
+    if (!req.session.customerId) {
+        res.redirect('/login');
+        return;
+    }
+
     res.render('./pages/cart', { customerId: req.session.customerId });
 });
 

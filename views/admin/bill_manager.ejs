@@ -304,6 +304,7 @@
         let billId = $(element).attr("data-id");
         $.get(`/admin/bill/${billId}`, function (result) {
             if (result) {
+                console.log(result)
                 $('#customerId').val(result.bill.customerId);
                 $('#employeeId').val(result.bill.employeeId);
                 $('#value').val(result.bill.value);
