@@ -1,11 +1,11 @@
 
 
-**## Đồ án Quản lý Nhà Sách **
+** Đồ án Quản lý Nhà Sách **
 
 
 | Môn học |Ngôn ngữ  |Công nghệ | Nền tảng
 |--|--|--|--|
-|  Công nghệ phần mềm| `NodeJS` | ExpressJS, MongoDB | Desktop |
+|  Công nghệ phần mềm| `NodeJS` | ExpressJS, MongoDB,... | Desktop |
 
 **Thành viên nhóm :** 
 
