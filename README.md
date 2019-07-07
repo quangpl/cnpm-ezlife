@@ -42,6 +42,7 @@ Enter link : http://localhost:3000
  - **Option 2** : -  👯 Clone this repo to your local machine using : `[https://github.com/quangpl/cnpm-ezlife.git](https://github.com/quangpl/cnpm-ezlife.git)`
 
 **Step 2:** -   **HACK AWAY!**  🔨🔨🔨
+
 **Step 3:** -  🔃 Create a new pull request using https://github.com/quangpl/cnpm-ezlife/compare
 ## Demo online :
 [https://cnpm-ezlife.herokuapp.com/](https://cnpm-ezlife.herokuapp.com/)
